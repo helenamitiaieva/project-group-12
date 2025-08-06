@@ -6,6 +6,12 @@
   -webkit-text-size-adjust: 100%;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   font-family: "Raleway", sans-serif;
   font-style: normal;
@@ -35,3 +41,10 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
