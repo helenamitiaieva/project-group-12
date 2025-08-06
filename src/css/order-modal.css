@@ -16,7 +16,7 @@
   visibility: hidden;
 }
 
-.modal-backdrop/* .is-open */ {
+.modal-backdrop.is-open {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
