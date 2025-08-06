@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-style: normal;
   display: flex;
   flex-direction: column;
@@ -17,15 +17,14 @@ body {
   background-color: #fff;
   font-size: 18px;
   font-weight: 700;
-  line-height:  1.4; 
-  letter-spacing: 1em;
-  color: #080C09;
+  line-height: 1.4;
+  /* letter-spacing: 1em; */
+  color: #080c09;
 }
 
 @media screen and (min-width: 768px) {
   body {
     font-size: 20px;
-
   }
 }
 
