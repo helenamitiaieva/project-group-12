@@ -98,6 +98,7 @@
     .title-hero {
         font-weight: 700;
         font-size: 56px;
+        height: 134px;
     }
 }
 
@@ -116,6 +117,7 @@
     .hero-text {
     font-size: 18px;
     max-width: 560px;
+    height: 87px;
     }
 }
 
