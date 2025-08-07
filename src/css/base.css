@@ -17,9 +17,9 @@ body {
   background-color: #fff;
   font-size: 18px;
   font-weight: 700;
-  line-height:  1.4; 
+  line-height: 1.4;
   letter-spacing: 1em;
-  color: #080C09;
+  color: #080c09;
 }
 
 @media screen and (min-width: 768px) {
