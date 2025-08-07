@@ -12,7 +12,7 @@
   visibility: hidden;
 }
 
-.order-modal-backdrop/*.is-open*/ {
+.order-modal-backdrop.is-open {
   opacity: 1;
   pointer-events: auto;
   visibility: visible;
@@ -34,9 +34,9 @@
   padding: 64px 20px;
 }
 
-/* .order-modal-backdrop:not(.is-open) .modal {
+.order-modal-backdrop:not(.is-open) .order-modal {
   transform: translate(-50%, -100%) scale(1.5);
-} */
+}
 
 .order-close-btn {
   position: absolute;
