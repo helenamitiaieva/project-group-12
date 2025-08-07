@@ -76,18 +76,7 @@
         line-height: 1.6;
         color: #080c09;
         transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    /*content: '';
-    position: absolute;
-    bottom: -1px;
-    left: 50%;
-    margin-left: -4px;
-    width: 8px;
-    height: 8px;
-    background-color: #3350e9;
-    border-radius: 50%;
-    opacity: 0;
-    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-*/
+   
 }
 
 .nav-list-item-link:is(.current, :hover, :focus)::after {
@@ -120,10 +109,6 @@
     opacity: 0.5;
 }
 
-
-/* ===== RESPONSIVE ===== */
-
-  
 
 /* Desktop */
 @media (min-width: 1280px) {
