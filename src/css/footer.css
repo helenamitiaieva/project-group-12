@@ -1,1 +1,115 @@
 /* styles for footer section */
+
+.social-icon-placeholder {
+    width: 24px;
+    height: 24px;
+    background-color: white;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+}
+/* ----------------------- */
+/* Общий контейнер футера */
+.site-footer {
+    background-color: #6B0609;
+    color: white;
+    padding: 0 64px;
+    width: 1440px;
+    height: 97px;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 80px;
+}
+
+/* Логотип + название */
+.site-footer__logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.site-footer__logo-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: #4B0000;
+    color: white;
+    font-weight: bold;
+    font-size: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    user-select: none;
+    margin-right: 8px;
+    font-family: Arial, sans-serif;
+}
+
+.site-footer__brand-name {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+/* Авторские права */
+.site-footer__copyright {
+    user-select: none;
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+/* Навигация */
+.site-footer__nav-list {
+    list-style: none;
+    display: flex;
+    gap: 80px;
+    margin: 0;
+    padding: 0;
+}
+
+.site-footer__nav-link {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    white-space: nowrap;
+}
+
+.site-footer__nav-link:hover,
+.site-footer__nav-link:focus {
+    color: #ddd;
+}
+
+/* Соцсети */
+.site-footer__socials .social-icons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.site-footer__socials .social-icons a svg {
+    stroke: white;
+    fill: white;
+    width: 24px;
+    height: 24px;
+    transition: stroke 0.3s ease, fill 0.3s ease;
+    cursor: pointer;
+}
+
+.site-footer__socials .social-icons a:hover svg,
+.site-footer__socials .social-icons a:focus svg {
+    stroke: #ddd;
+    fill: #ddd;
+}
