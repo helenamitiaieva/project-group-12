@@ -1,6 +1,7 @@
 import validator from 'validator';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+import { createOrder } from './api';
 
 const backdrop = document.querySelector('[data-order-modal-backdrop]');
 const openModalBtn = document.querySelector('[data-order-modal-open]');
@@ -17,8 +18,6 @@ if (openModalBtn) {
 form.addEventListener('submit', handleSubmit);
 document.addEventListener('keydown', handleEscape);
 backdrop.addEventListener('mousedown', closeModal);
-
-openModal();
 
 function openModal() {
   backdrop.classList.add('is-open');
@@ -58,6 +57,7 @@ function closeModal(event) {
 function handleEscape(event) {
   if (event.key === 'Escape') {
     backdrop.classList.remove('is-open');
+    document.body.classList.remove('no-scroll');
   }
 }
 
@@ -67,31 +67,67 @@ function handleSubmit(event) {
   const email = form.email.value.trim();
   const tel = form.tel.value.trim().replace(/\D/g, '');
   const comment = form.text.value.trim();
+  const emailParent = event.target.email.closest('.order-input-wrap');
+  const telParent = event.target.tel.closest('.order-input-wrap');
+  const commentParent = event.target.text.closest('.order-textarea-wrap');
 
   if (!validator.isEmail(email)) {
-    iziToast.error({
-      title: 'Помилка',
-      message: `Невалідний email`,
-      position: 'topRight',
-    });
+    emailParent.setAttribute('data-error', 'Невалідний email');
+    event.target.email.classList.add('error');
     return;
   }
+
+  event.target.email.classList.remove('error');
+  emailParent.removeAttribute('data-error', 'Невалідний email');
 
   if (!validator.isMobilePhone(tel, 'uk-UA')) {
-    iziToast.error({
-      title: 'Помилка',
-      message: `Невалідний номер телефону`,
-      position: 'topRight',
-    });
+    telParent.setAttribute('data-error', 'Невалідний телефон');
+    event.target.tel.classList.add('error');
     return;
   }
 
-  console.log({
-    email,
-    tel,
-    comment,
-  });
+  event.target.tel.classList.remove('error');
+  telParent.removeAttribute('data-error', 'Невалідний телефон');
 
-  backdrop.classList.remove('is-open');
-  form.reset();
+  if (comment !== '' && (comment.length < 5 || comment.length > 256)) {
+    event.target.text.classList.add('error');
+    commentParent.setAttribute(
+      'data-error',
+      'Коментар має містити від 5 до 256 символів'
+    );
+    return;
+  } else {
+    event.target.text.classList.remove('error');
+    commentParent.removeAttribute(
+      'data-error',
+      'Коментар має містити від 5 до 256 символів'
+    );
+  }
+
+  createOrder({
+    email,
+    phone: tel,
+    modelId: '682f9bbf8acbdf505592ac36',
+    color: '#1212ca',
+    comment: comment || 'No comment',
+  })
+    .then(response => {
+      iziToast.success({
+        title: 'OK',
+        message: `Заявка створена успішно!`,
+        position: 'topRight',
+      });
+      backdrop.classList.remove('is-open');
+      document.body.classList.remove('no-scroll');
+      form.reset();
+    })
+    .catch(error => {
+      const message =
+        error.response?.data?.message || error.message || 'Unknown error';
+      iziToast.error({
+        title: 'Error',
+        message: `Помилка при створенні заявки: ${message}`,
+        position: 'topRight',
+      });
+    });
 }

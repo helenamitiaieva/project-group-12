@@ -1,4 +1,4 @@
-<div class="order-modal-backdrop is-open" data-order-modal-backdrop>
+<div class="order-modal-backdrop" data-order-modal-backdrop>
   <div class="order-modal" tabindex="-1">
     <button class="order-close-btn" data-order-modal-close>
       <svg class="close-btn-icon" width="16" height="16">
@@ -35,12 +35,14 @@
       </div>
       <div class="order-form-field">
         <label for="user-text">Коментар</label>
-        <textarea
-          class="order-modal-textarea"
-          name="text"
-          id="user-text"
-          placeholder="Type your message..."
-        ></textarea>
+        <div class="order-textarea-wrap">
+          <textarea
+            class="order-modal-textarea"
+            name="text"
+            id="user-text"
+            placeholder="Type your message..."
+          ></textarea>
+        </div>
       </div>
       <button class="order-modal-btn" type="submit">Надіслати заявку</button>
     </form>

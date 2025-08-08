@@ -79,6 +79,10 @@
   position: relative;
 }
 
+.order-textarea-wrap {
+  position: relative;
+}
+
 .order-form-input,
 .order-modal-textarea {
   width: 100%;
@@ -94,6 +98,38 @@
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   background-color: rgba(8, 12, 9, 0.05);
   outline: none;
+}
+
+.order-form-input.error,
+.order-form-input.error::placeholder,
+.order-form-input.error:focus,
+.order-modal-textarea.error,
+.order-modal-textarea.error::placeholder,
+.order-modal-textarea.error:focus {
+  border-color: #6b0609;
+  color: #6b0609;
+}
+
+.order-textarea-wrap::after,
+.order-input-wrap::after {
+  content: attr(data-error);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #6b0609;
+}
+
+.order-form-input.error::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: aqua;
+  border: 2px solid red;
+  background-color: #404bbf;
+  content: 'Error text';
 }
 
 .order-form-input:focus,
