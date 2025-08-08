@@ -4,15 +4,16 @@
   line-height: 1.6;
   max-width: 700px;
   margin: 50px auto;
-  padding: 0 15px;
 }
 
 .faq h2 {
-  font-size: 48px;
-  line-height: 1.2;
-  letter-spacing: 0.01em;
-  text-align: center;
-  margin-bottom: 25px;
+font-weight: 700;
+font-size: 36px;
+line-height: 120%;
+letter-spacing: 0.01em;
+text-align: center;
+color: #080c09;
+margin-bottom: 32px;
 }
 
 .faq-item {
@@ -20,7 +21,10 @@
 }
 
 .faq-question {
-  font-size: 18px;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  color: #080c09;
   width: 100%;
   background: none;
   padding: 15px 0;
@@ -56,4 +60,29 @@
 .faq-answer p {
   padding: 0 0 15px 0;
   margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+}
+
+.faq h2 {
+  font-size: 48px;
+}
+
+.faq-question {
+  font-size: 18px;
+  padding: 21px 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 64px;
+  }
 }
