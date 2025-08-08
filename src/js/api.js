@@ -2,19 +2,23 @@ import axios from 'axios';
 const BASE_URL = 'https://furniture-store.b.goit.study/api';
 
 // Отримати список меблів
-export async function getFurnitures() {
-  const { data } = await axios.get(`${BASE_URL}/furnitures`);
+export async function getFurnitures({ category = null, page = 1, limit = 8 } = {}) {
+  const params = new URLSearchParams({ page, limit });
+  if (category) params.append('category', category);
+  const { data } = await axios.get(`${BASE_URL}/furnitures`, { params });
   return data;
 }
-
+ 
 // Отримати меблі по ID
 export async function getFurnitureById(id) {
-  const { data } = await axios.get(`${BASE_URL}/furnitures/${id}`);
+  const { data } = await axios.get(`${BASE_URL}/furnitures/${id}`, {params});
   return data;
 }
 
 // Отримати список категорій
-export async function getCategories() {
+export async function getCategories({ category = null } = {}) {
+    const params = category ? { category } : {};
+
   const { data } = await axios.get(`${BASE_URL}/categories`);
   return data;
 }

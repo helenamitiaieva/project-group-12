@@ -1,3 +1,4 @@
+
 import './js/header.js';
 import './js/hero.js';
 import './js/furniture-list.js';
@@ -11,3 +12,4 @@ import './js/footer.js';
 import { getFurnitures } from './js/api.js';
 // Для перевiрки (приклад, щоб побачити data)
 getFurnitures().then(data => console.log('Furnitures:', data));
+
