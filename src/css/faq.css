@@ -1,3 +1,11 @@
+.container {
+  min-width: 320px;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
 .faq {
   font-weight: 400;
   font-size: 16px;
