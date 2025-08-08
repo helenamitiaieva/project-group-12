@@ -154,3 +154,6 @@
         width: 209px;
 }
 }
+.hero-scroll:hover {
+    cursor: pointer;
+}
