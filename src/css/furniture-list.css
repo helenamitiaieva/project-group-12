@@ -5,7 +5,6 @@
 
 .furniture-cnt{
     
-box-sizing: border-box;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -119,7 +118,7 @@ align-items: center;
 }
 
 .product-card{
-    min-width: 320px;
+    
     max-width: 335px;
         height: 450px;
         min-width: 276px;
@@ -153,6 +152,7 @@ margin-bottom: 8px;
     width: 24px;
     height: 24px;
     border-radius: 64px;
+    border: 1px solid #c7c3bb;
 }
 
 .price{
@@ -164,6 +164,9 @@ margin-bottom: 8px;
 }
 
 .details-btn{
+    font-weight: 500;
+        font-size: 16px;
+        line-height: 1.6;
     border-radius: 100px;
     width: 100%;
     height: 46px;
@@ -181,7 +184,9 @@ margin-bottom: 8px;
 }
 
 .btn-download {
-    
+    font-weight: 500;
+        font-size: 16px;
+        line-height: 1.6;
     border-radius: 100px;
         padding: 10px 24px;
         width: 100%;
@@ -211,4 +216,60 @@ margin-bottom: 8px;
 
 .hidden {
     display: none !important;
+}
+
+/* ----------------------------------------------- */
+
+@media screen and (min-width: 768px) {
+
+.furniture-cnt {
+        align-items: start;
+    }
+.list-categories {
+    gap: 24px;
+}
+
+.item-category {
+    width: calc((100% - 24px * 3) / 4);
+
+}
+
+.list-furniture {
+    
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.product-card {
+    width: calc((100% - 24px) / 2);
+    max-width: 340px;
+    height: 460px;
+    
+}
+
+.btn-download {
+    width: 340px;
+    margin: auto;
+}
+
+}
+
+/* -------------------------------------------- */
+
+@media screen and (min-width: 1440px) {
+
+.furniture {
+
+        padding: 80px 0;
+    }
+
+.item-category {
+    width: calc((100% - 24px * 6) / 7);
+
+}
+
+.product-card {
+    width: 310px;
+        height: 435px;
+}
 }
