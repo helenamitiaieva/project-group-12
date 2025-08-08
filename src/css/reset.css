@@ -33,3 +33,10 @@ img {
   max-width: 100%;
   height: auto;
 }
+
+button, input, textarea, select {
+  font: inherit;
+  outline: none;
+  border: none;
+  background: none;
+}
