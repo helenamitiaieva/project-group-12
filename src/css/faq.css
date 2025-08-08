@@ -12,7 +12,6 @@
   line-height: 1.2;
   letter-spacing: 0.01em;
   text-align: center;
-  text-align: center;
   margin-bottom: 25px;
 }
 
@@ -26,24 +25,25 @@
   background: none;
   padding: 15px 0;
   text-align: left;
+  cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .faq-question:hover {
-  color:#6b0609; 
+  color: #6b0609; 
 }
 
-.faq-question:hover .arrow {
+.faq-question:hover .faq-arrow {
   fill: #6b0609; 
 }
 
-.arrow {
+.faq-arrow {
   transition: transform 0.3s ease;
 }
 
-.faq-question.active .arrow {
+.faq-question.active .faq-arrow {
   transform: rotate(180deg);
 }
 
@@ -57,4 +57,3 @@
   padding: 0 0 15px 0;
   margin: 0;
 }
-

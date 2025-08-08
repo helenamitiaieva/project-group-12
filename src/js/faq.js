@@ -1,15 +1,15 @@
-document.querySelectorAll(".faq-question").forEach(button => {
-  button.addEventListener("click", () => {
-    const answer = button.parentElement.querySelector(".faq-answer");
-    const isOpen = button.classList.contains("active");
-
-    document.querySelectorAll(".faq-question").forEach(btn => {
+const faqButtons = document.querySelectorAll(".faq-question");
+faqButtons.forEach(faqButton => {
+  faqButton.addEventListener("click", () => {
+    const answer = faqButton.parentElement.querySelector(".faq-answer");
+    const isOpen = faqButton.classList.contains("active");
+    faqButtons.forEach(btn => {
       btn.classList.remove("active");
-      btn.parentElement.querySelector(".faq-answer").style.maxHeight = null;
+      const answerPanel = btn.nextElementSibling;
+      if (answerPanel) answerPanel.style.maxHeight = null;
     });
-
     if (!isOpen) {
-      button.classList.add("active");
+      faqButton.classList.add("active");
       answer.style.maxHeight = answer.scrollHeight + "px";
     }
   });
