@@ -41,17 +41,20 @@ function openModal() {
   backdrop.classList.add('is-open');
   document.body.classList.add('no-scroll');
 
-  openModalBtn.setAttribute('aria-expanded', 'false');
-  setTimeout(() => {
-    openModalBtn.blur();
-  }, 0);
-  setTimeout(() => {
-    form.email.focus();
-  }, 0);
+  if (openModalBtn) {
+    openModalBtn.setAttribute('aria-expanded', 'false');
+    setTimeout(() => {
+      openModalBtn.blur();
+    }, 0);
+    setTimeout(() => {
+      form.email.focus();
+    }, 500);
+  }
 }
 
 function closeModal(event) {
   if (
+    event &&
     event.target !== closeModalBtn &&
     !closeModalBtn.contains(event.target) &&
     event.target !== backdrop
@@ -68,11 +71,7 @@ function closeModal(event) {
 
 function handleEscape(event) {
   if (event.key === 'Escape') {
-    backdrop.classList.remove('is-open');
-    document.body.classList.remove('no-scroll');
-    setTimeout(() => {
-      openModalBtn.focus();
-    }, 0);
+    closeModal();
   }
 }
 
@@ -129,12 +128,8 @@ function handleSubmit(event) {
         message: `Заявка створена успішно!`,
         position: 'topRight',
       });
-      backdrop.classList.remove('is-open');
-      document.body.classList.remove('no-scroll');
+      closeModal();
       form.reset();
-      setTimeout(() => {
-        openModalBtn.focus();
-      }, 0);
     })
     .catch(error => {
       const message =
