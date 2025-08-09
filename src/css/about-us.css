@@ -46,11 +46,12 @@
     }
         .about-us-container{
         flex-direction: row;
-        align-items: flex-start;
         gap: 40px;
+        justify-content: center;
+        align-items: center;
     }
     /* Текстова частина займає половину простору*/
-    .about-us>div {
+    .about-us-container > div {
         flex: 1;
     }
 
@@ -60,7 +61,7 @@
         max-width: 50%;
     }
 
-    /* Вирівнювання тексту по лівому краю*/
+    /* Вирівнювання тексту по центру*/
     .about-us-title {
         text-align: left;
     }
