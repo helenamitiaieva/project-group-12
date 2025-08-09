@@ -45,3 +45,12 @@ html {
 }
 
 
+.hiden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.is-open {
+  opacity: 1;
+  visibility: visible;
+}
