@@ -1,6 +1,6 @@
 
 .hero-container {
-    width: 335px;
+    max-width: 375px;
     margin: 0 auto;
     width: 100%;
 }
@@ -9,6 +9,7 @@
     .hero-container {
         max-width: 768px;
         margin: 0 auto;
+        max-height: 323px;
     }
 }
 
@@ -40,7 +41,8 @@
     display: flex;
     flex-wrap: wrap;
     align-items: start;
-    background-image: url(../img/hero/bg-2-min.jpg), linear-gradient(#000, #d9d9d9);
+    background-image: linear-gradient(#000, #d9d9d9),
+        url(../img/hero/bg-2-min.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -48,20 +50,20 @@
 
 @media screen and (min-width:768px) {
     .hero {
-        background-image: url(../img/hero/bg-1-min.jpg), linear-gradient(#000, #d9d9d9);
+        background-image: linear-gradient(#000, #d9d9d9),url(../img/hero/bg-1-min.jpg);
     }
 }
 
 @media screen and (min-width:1440px) {
     .hero {
-        background-image: url(../img/hero/bg-min.jpg), linear-gradient(#000, #d9d9d9);
+        background-image:linear-gradient(#000, #d9d9d9), url(../img/hero/bg-min.jpg);
     }
 }
 
 .div-hero-text {
     margin-bottom: 32px;
-    width: 335px;
-    height: 224px;
+    max-width: 335px;
+    max-height: 224px;
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
@@ -72,8 +74,8 @@
 
 @media screen and (min-width:768px) {
     .div-hero-text {
-        width: 560px;
-        height: 245px;
+        max-width: 560px;
+        max-height: 245px;
         margin-right: 144px;
     }
 }
@@ -98,7 +100,7 @@
     .title-hero {
         font-weight: 700;
         font-size: 56px;
-        height: 134px;
+        max-height: 134px;
     }
 }
 
@@ -109,7 +111,8 @@
     line-height: 1.6;
     color: #fff;
     width: 100%;
-    max-height: 104px;
+    height: 100%;
+    min-height: 104px;
     max-width: 335px;
 }
 
@@ -117,7 +120,8 @@
     .hero-text {
     font-size: 18px;
     max-width: 560px;
-    height: 87px;
+    min-height: 87px;
+    height: 100%;
     }
 }
 
@@ -125,10 +129,9 @@
     box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
     background: #6b0609;
     border-radius: 100px;
-    /* padding: 10px 24px; */
     letter-spacing: 0.01em;
     width: 335px;
-    height: 46px;
+    min-height: 46px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -151,7 +154,8 @@
 
 @media screen and (min-width:768px) {
     .hero-scroll {
-        width: 209px;
+        max-width: 209px;
+        min-height: 46px;
 }
 }
 .hero-scroll:hover {
