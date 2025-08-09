@@ -1,6 +1,11 @@
 <div class="order-modal-backdrop" data-order-modal-backdrop>
   <div class="order-modal" tabindex="-1">
-    <button class="order-close-btn" data-order-modal-close>
+    <button
+      class="order-close-btn"
+      type="button"
+      aria-label="Закрити"
+      data-order-modal-close
+    >
       <svg class="close-btn-icon" width="16" height="16">
         <use href="../img/icon.svg#icon-x"></use>
       </svg>
@@ -16,6 +21,7 @@
             type="email"
             id="user-email"
             placeholder="example@gmail.com"
+            autocomplete="email"
             required
           />
         </div>
@@ -29,6 +35,7 @@
             type="tel"
             id="user-tel"
             placeholder="+38 (099) 123 22 11"
+            autocomplete="tel"
             required
           />
         </div>

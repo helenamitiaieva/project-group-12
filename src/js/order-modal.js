@@ -19,27 +19,35 @@ form.addEventListener('submit', handleSubmit);
 document.addEventListener('keydown', handleEscape);
 backdrop.addEventListener('mousedown', closeModal);
 
+const requiredInputs = form.querySelectorAll('input[required]');
+
+requiredInputs.forEach(input => {
+  input.addEventListener('input', checkInputs);
+});
+
+function checkInputs() {
+  let allValid = true;
+
+  requiredInputs.forEach(input => {
+    if (input.value.trim() === '') {
+      allValid = false;
+    }
+  });
+
+  btnOrder.disabled = !allValid;
+}
+
 function openModal() {
   backdrop.classList.add('is-open');
   document.body.classList.add('no-scroll');
 
-  const requiredInputs = form.querySelectorAll('input[required]');
-
-  requiredInputs.forEach(input => {
-    input.addEventListener('input', checkInputs);
-  });
-
-  function checkInputs() {
-    let allValid = true;
-
-    requiredInputs.forEach(input => {
-      if (input.value.trim() === '') {
-        allValid = false;
-      }
-    });
-
-    btnOrder.disabled = !allValid;
-  }
+  openModalBtn.setAttribute('aria-expanded', 'false');
+  setTimeout(() => {
+    openModalBtn.blur();
+  }, 0);
+  setTimeout(() => {
+    form.email.focus();
+  }, 0);
 }
 
 function closeModal(event) {
@@ -52,12 +60,19 @@ function closeModal(event) {
   }
   backdrop.classList.remove('is-open');
   document.body.classList.remove('no-scroll');
+  openModalBtn.setAttribute('aria-expanded', 'true');
+  setTimeout(() => {
+    openModalBtn.focus();
+  }, 0);
 }
 
 function handleEscape(event) {
   if (event.key === 'Escape') {
     backdrop.classList.remove('is-open');
     document.body.classList.remove('no-scroll');
+    setTimeout(() => {
+      openModalBtn.focus();
+    }, 0);
   }
 }
 
@@ -78,7 +93,7 @@ function handleSubmit(event) {
   }
 
   event.target.email.classList.remove('error');
-  emailParent.removeAttribute('data-error', 'Невалідний email');
+  emailParent.removeAttribute('data-error');
 
   if (!validator.isMobilePhone(tel, 'uk-UA')) {
     telParent.setAttribute('data-error', 'Невалідний телефон');
@@ -87,7 +102,7 @@ function handleSubmit(event) {
   }
 
   event.target.tel.classList.remove('error');
-  telParent.removeAttribute('data-error', 'Невалідний телефон');
+  telParent.removeAttribute('data-error');
 
   if (comment !== '' && (comment.length < 5 || comment.length > 256)) {
     event.target.text.classList.add('error');
@@ -98,10 +113,7 @@ function handleSubmit(event) {
     return;
   } else {
     event.target.text.classList.remove('error');
-    commentParent.removeAttribute(
-      'data-error',
-      'Коментар має містити від 5 до 256 символів'
-    );
+    commentParent.removeAttribute('data-error');
   }
 
   createOrder({
@@ -120,6 +132,9 @@ function handleSubmit(event) {
       backdrop.classList.remove('is-open');
       document.body.classList.remove('no-scroll');
       form.reset();
+      setTimeout(() => {
+        openModalBtn.focus();
+      }, 0);
     })
     .catch(error => {
       const message =
