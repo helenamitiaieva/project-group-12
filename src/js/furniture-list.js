@@ -13,8 +13,6 @@ let totalPages = 0;
 
 initFurniture(); 
 
-
-
 async function initCategories() {
     try {
         const categories = await getCategories();
@@ -40,8 +38,6 @@ async function initCategories() {
             position: 'topRight',
         })
     }
-     
- 
 }
 
 initCategories();
@@ -60,9 +56,7 @@ async function onCategoryClick(event) {
     page = 1;
     
     await initFurniture(categoryId);
-    
 }
-
 
 async function initFurniture(categoryId, pageNum = 1, isLoadMore = false) {
   try {
@@ -113,7 +107,6 @@ async function initFurniture(categoryId, pageNum = 1, isLoadMore = false) {
     loader.classList.add('hidden');
   }
 }
-
 
 downloadButton.addEventListener('click', async () => {
   page += 1;
