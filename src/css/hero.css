@@ -41,8 +41,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: start;
-    background-image: linear-gradient(#000, #d9d9d9),
-        url(../img/hero/bg-2-min.jpg);
+    background-image:url(../img/hero/bg-2-min.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -50,13 +49,13 @@
 
 @media screen and (min-width:768px) {
     .hero {
-        background-image: linear-gradient(#000, #d9d9d9),url(../img/hero/bg-1-min.jpg);
+        background-image: url(../img/hero/bg-1-min.jpg);
     }
 }
 
 @media screen and (min-width:1440px) {
     .hero {
-        background-image:linear-gradient(#000, #d9d9d9), url(../img/hero/bg-min.jpg);
+        background-image: url(../img/hero/bg-min.jpg);
     }
 }
 
