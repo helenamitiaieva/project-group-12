@@ -1,51 +1,48 @@
+
+
 (() => {
   const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.mobile-menu-open-btn');
   const closeMenuBtn = document.querySelector('.js-close-menu');
+  const menuLinks = document.querySelectorAll('.nav-list-item-link');
 
-  openMenuBtn.addEventListener('click', () => {
+  const openMenu = () => {
     mobileMenu.classList.add('is-open');
+    openMenuBtn.classList.add('hiden');
     closeMenuBtn.classList.remove('hiden-close');
-    closeMenuBtn.classList.add('is-open');
-    openMenuBtn.classList.add('hiden')
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeMenu = () => {
+    mobileMenu.classList.remove('is-open');
+    openMenuBtn.classList.remove('hiden');
+    closeMenuBtn.classList.add('hiden-close');
+    document.body.style.overflow = '';
+  };
+
+  openMenuBtn.addEventListener('click', openMenu);
+  closeMenuBtn.addEventListener('click', closeMenu);
+
+  // Закриття при кліку на посилання меню
+  menuLinks.forEach(link => {
+    link.addEventListener('click', closeMenu);
   });
 
-  closeMenuBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('is-open');
-    openMenuBtn.classList.remove('hiden')
-    closeMenuBtn.classList.remove('is-open');
+  // Закриття при кліку поза меню
+  document.addEventListener('click', e => {
+    if (
+      mobileMenu.classList.contains('is-open') &&
+      !mobileMenu.contains(e.target) &&
+      !openMenuBtn.contains(e.target)
+    ) {
+      closeMenu();
+    }
   });
 
-  openMenuBtn.addEventListener('click', () => {
-  mobileMenu.classList.add('is-open');
-  document.body.style.overflow = 'hidden'; // додати
-});
-
-  closeMenuBtn.addEventListener('click', () => {
-  mobileMenu.classList.remove('is-open');
-  document.body.style.overflow = ''; // додати
-});
-    })();
-  document.addEventListener('click', (e) => {
-  if (
-    mobileMenu.classList.contains('is-open') &&
-    !mobileMenu.contains(e.target) &&
-    !openMenuBtn.contains(e.target)
-  ) {
-    mobileMenu.classList.remove('is-open');
-    document.body.style.overflow = '';
-  }
-});
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    mobileMenu.classList.remove('is-open');
-    document.body.style.overflow = '';
-  }
-});
-document.querySelectorAll('.mob-menu-item-link').forEach(link => {
-  link.addEventListener('click', () => {
-    mobileMenu.classList.remove('is-open');
-    document.body.style.overflow = '';
+  // Закриття по Escape
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeMenu();
+    }
   });
-});
-
+})();

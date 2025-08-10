@@ -46,16 +46,31 @@
     background-size: cover;
     background-position: center;
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .hero {
+        background-image: url('../img/hero/bg@2x-2-min.jpg');
+    }
+}
 
 @media screen and (min-width:768px) {
     .hero {
         background-image: url(../img/hero/bg-1-min.jpg);
     }
-}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .hero {
+        background-image: url('../img/hero/bg@2x-1-min.jpg');
+    }
+}}
 
 @media screen and (min-width:1440px) {
     .hero {
         background-image: url(../img/hero/bg-min.jpg);
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        .hero {
+            background-image: url('../img/hero/bg@2x-min.jpg');
+        }
     }
 }
 
@@ -141,14 +156,14 @@
     line-height: 1.6;
     color: #fff;
     font-family: "Raleway", sans-serif;
+    transition:  opacity 250ms var(--main-cubic-bezier);
 }
 
 .hero-scroll:hover,
 .hero-scroll:focus {
     box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-        background: #6b0609;
-        opacity: 0.5;
-        cursor: pointer;
+    opacity: 0.5;
+    cursor: pointer;
 }
 
 @media screen and (min-width:768px) {
@@ -156,7 +171,4 @@
         max-width: 209px;
         min-height: 46px;
 }
-}
-.hero-scroll:hover {
-    cursor: pointer;
 }
