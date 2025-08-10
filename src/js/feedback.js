@@ -5,10 +5,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { getFeedbacks } from './api.js';
 
-/**
- * Малює 5 зірок із точним відсотком заповнення для кожної.
- * Напр., rate=3.75 -> 3 повні + 75% четвертої.
- */
 function renderStarsPrecise(rate, max = 5) {
   const r = Number(rate) || 0;
   let html = '';
