@@ -75,7 +75,7 @@ line-height: 160%;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    padding: 0 53px 32px 53px; /* боковые 53px, нижний 32px */
+    padding: 0 53px 32px 53px; 
     gap: 24px;
     padding: 0 64px
   }
