@@ -1,1 +1,111 @@
-/* styles for feedback section */
+.feedback {
+  padding: 43px 0;
+  text-align: center;
+  position: relative; /* Щоб кнопки та пагінація позиціонувались всередині секції */
+}
+
+.feedback-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.feedback-subtitle {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.feedback-item {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+.feedback-stars {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.feedback-text {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.feedback-author {
+  font-weight: 600;
+}
+
+/* Кнопки перемикання */
+.feedback-buttons {
+  position: absolute;
+  top: 90%;
+  right: 25px; /* Відступ від правого краю */
+  display: flex;
+  flex-direction: row; /* Кнопки одна над одною */
+  gap: 10px;
+  transform: translateY(-50%);
+}
+
+
+.feedback-btn {
+  border: 1px solid #ccc;
+  background: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  transition: background 0.3s, border-color 0.3s;
+}
+
+.feedback-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.feedback-btn:hover:not(:disabled),
+.feedback-btn:focus:not(:disabled) {
+  background: #f0f0f0;
+  border-color: #999;
+}
+
+.feedback-pagination {
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: left !important;
+  width: auto !important;
+}
+
+.feedback-pagination .swiper-pagination-bullet {
+  background: #000;
+  opacity: 0.6;
+  transition: opacity 0.3s, background 0.3s;
+}
+
+.feedback-pagination .swiper-pagination-bullet-active {
+  background: #007aff;
+  opacity: 1;
+}
+
+.feedback-pagination .swiper-pagination-bullet:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .feedback-title {
+    font-size: 28px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+  .feedback-title {
+    font-size: 32px;
+  }
+}

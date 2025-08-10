@@ -1,0 +1,57 @@
+<div class="order-modal-backdrop" data-order-modal-backdrop>
+  <div class="order-modal" tabindex="-1">
+    <button
+      class="order-close-btn"
+      type="button"
+      aria-label="Закрити"
+      data-order-modal-close
+    >
+      <svg class="close-btn-icon" width="16" height="16">
+        <use href="../img/icon.svg#icon-x"></use>
+      </svg>
+    </button>
+    <form class="order-modal-form">
+      <h2 class="order-form-title"> Замовити зворотний зв’язок</h2>
+      <div class="order-form-field">
+        <label for="user-email">Email*</label>
+        <div class="order-input-wrap">
+          <input
+            class="order-form-input"
+            name="email"
+            type="email"
+            id="user-email"
+            placeholder="example@gmail.com"
+            autocomplete="email"
+            required
+          />
+        </div>
+      </div>
+      <div class="order-form-field">
+        <label for="user-tel">Телефон*</label>
+        <div class="order-input-wrap">
+          <input
+            class="order-form-input"
+            name="tel"
+            type="tel"
+            id="user-tel"
+            placeholder="+38 (099) 123 22 11"
+            autocomplete="tel"
+            required
+          />
+        </div>
+      </div>
+      <div class="order-form-field">
+        <label for="user-text">Коментар</label>
+        <div class="order-textarea-wrap">
+          <textarea
+            class="order-modal-textarea"
+            name="text"
+            id="user-text"
+            placeholder="Type your message..."
+          ></textarea>
+        </div>
+      </div>
+      <button class="order-modal-btn" type="submit">Надіслати заявку</button>
+    </form>
+  </div>
+</div>
