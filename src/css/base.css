@@ -4,6 +4,7 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+  --main-cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 *,
@@ -24,7 +25,7 @@ body {
   font-size: 18px;
   font-weight: 700;
   line-height:  1.4; 
-    color: #080C09;
+  color: #080C09;
 }
 
 @media screen and (min-width: 768px) {
@@ -44,4 +45,12 @@ html {
   scroll-behavior: smooth;
 }
 
+.hiden {
+  opacity: 0;
+  visibility: hidden;
+}
 
+.is-open {
+  opacity: 1;
+  visibility: visible;
+ } 

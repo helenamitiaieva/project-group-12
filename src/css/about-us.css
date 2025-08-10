@@ -1,1 +1,65 @@
-/* styles for about-us section */
+.about-us {
+    padding: 32px 0;
+}
+
+.about-us img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.about-us-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+}
+
+.about-us-title {
+    font-size: 36px;
+    line-height: 1.11;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #212121;
+    margin-bottom: 24px;
+}
+
+.about-us-text {
+    font-family: 'Relaway Regular', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 1.5;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #757575;
+}
+
+@media (min-width: 1400px) {
+    .about-us {
+        padding: 64px 0;
+    }
+
+    .about-us-container{
+        flex-direction: row;
+        gap: 40px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .about-us-container > div {
+        flex: 1;
+    }
+
+    .about-us img {
+        flex: 1;
+        max-width: 50%;
+    }
+
+    .about-us-title {
+        text-align: left;
+    }
+
+    .about-us-text {
+        text-align: left;
+    }
+}
