@@ -43,3 +43,13 @@ main:has(.back-link) {
 html {
   scroll-behavior: smooth;
 }
+
+.hiden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.is-open {
+  opacity: 1;
+  visibility: visible;
+ } 
