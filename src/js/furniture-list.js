@@ -12,6 +12,7 @@ let page = 1;
 let totalPages = 0;
 
 initFurniture(); 
+initCategories();
 
 async function initCategories() {
     try {
@@ -22,12 +23,10 @@ async function initCategories() {
       </li>`;
         categoriesList.insertAdjacentHTML('beforeend', allCategoryMarkup);
         categories.forEach(({_id, name}) => {
-            
             const markup =
             `<li class="item-category">
         <button type="button" data-id="${_id}" data-bg-id="${_id}" class="btn-category">${name}</button>
         </li>`;
-        
         categoriesList.insertAdjacentHTML('beforeend', markup);
         });
         const firstBtn = categoriesList.querySelector('button[data-bg-id="all"]');
@@ -39,9 +38,6 @@ async function initCategories() {
         })
     }
 }
-
-initCategories();
-
 categoriesList.addEventListener('click', onCategoryClick);
 
 async function onCategoryClick(event) {
@@ -54,7 +50,6 @@ async function onCategoryClick(event) {
     btn.classList.add('active');
     categoryId = btn.dataset.id || null;
     page = 1;
-    
     await initFurniture(categoryId);
 }
 
