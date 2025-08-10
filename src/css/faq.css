@@ -10,7 +10,6 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
-  max-width: 700px;
   margin: 50px auto;
 }
 
@@ -97,5 +96,10 @@ margin-bottom: 32px;
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 64px;
+  }
+  .faq-item-container {
+    width: 865px;
+    height: 360px;
+    margin: 0 auto;
   }
 }
