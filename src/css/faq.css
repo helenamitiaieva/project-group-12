@@ -10,7 +10,6 @@
   font-weight: 400;
   font-size: 16px;
   line-height: 1.6;
-  max-width: 700px;
   margin: 50px auto;
 }
 
@@ -26,6 +25,10 @@ margin-bottom: 32px;
 
 .faq-item {
   border-bottom: 1px solid #ccc;
+}
+
+.faq-item:first-of-type {
+  border-top: 1px solid #ccc;
 }
 
 .faq-question {
@@ -76,9 +79,7 @@ margin-bottom: 32px;
     margin: 0 auto;
     padding: 0 32px;
   }
-}
-
-.faq h2 {
+  .faq h2 {
   font-size: 48px;
 }
 
@@ -87,10 +88,18 @@ margin-bottom: 32px;
   padding: 21px 0;
 }
 
+}
+
+
 @media screen and (min-width: 1440px) {
   .container {
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 64px;
+  }
+  .faq-item-container {
+    width: 865px;
+    height: 360px;
+    margin: 0 auto;
   }
 }
