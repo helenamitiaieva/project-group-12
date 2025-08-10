@@ -6,8 +6,14 @@
   -webkit-text-size-adjust: 100%;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-style: normal;
   display: flex;
   flex-direction: column;
@@ -17,14 +23,13 @@ body {
   background-color: #fff;
   font-size: 18px;
   font-weight: 700;
-  line-height:  1.4; 
-  color: #080C09;
+  line-height: 1.4;
+  color: #080c09;
 }
 
 @media screen and (min-width: 768px) {
   body {
     font-size: 20px;
-
   }
 }
 
@@ -34,3 +39,9 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+
