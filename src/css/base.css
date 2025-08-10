@@ -23,8 +23,8 @@ body {
   background-color: #fff;
   font-size: 18px;
   font-weight: 700;
-  line-height: 1.4;
-  color: #080c09;
+  line-height:  1.4; 
+    color: #080C09;
 }
 
 @media screen and (min-width: 768px) {
@@ -43,5 +43,3 @@ main:has(.back-link) {
 html {
   scroll-behavior: smooth;
 }
-
-
