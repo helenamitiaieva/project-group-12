@@ -46,16 +46,31 @@
     background-size: cover;
     background-position: center;
 }
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .hero {
+        background-image: url('../img/hero/bg@2x-2-min.jpg');
+    }
+}
 
 @media screen and (min-width:768px) {
     .hero {
         background-image: url(../img/hero/bg-1-min.jpg);
     }
-}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+    .hero {
+        background-image: url('../img/hero/bg@2x-1-min.jpg');
+    }
+}}
 
 @media screen and (min-width:1440px) {
     .hero {
         background-image: url(../img/hero/bg-min.jpg);
+    }
+    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
+        .hero {
+            background-image: url('../img/hero/bg@2x-min.jpg');
+        }
     }
 }
 
