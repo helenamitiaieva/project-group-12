@@ -43,13 +43,14 @@
 /* Кнопки перемикання */
 .feedback-buttons {
   position: absolute;
-  top: 50%;
-  right: 15px; /* Відступ від правого краю */
+  top: 90%;
+  right: 25px; /* Відступ від правого краю */
   display: flex;
-  flex-direction: column; /* Кнопки одна над одною */
+  flex-direction: row; /* Кнопки одна над одною */
   gap: 10px;
   transform: translateY(-50%);
 }
+
 
 .feedback-btn {
   border: 1px solid #ccc;
@@ -71,13 +72,12 @@
   border-color: #999;
 }
 
-/* Пагінація з крапочками зверху зліва */
 .feedback-pagination {
   position: absolute;
-  top: 10px;
-  left: 15px;
-  margin-top: 0;
-  text-align: left;
+  top: 0;
+  left: 0;
+  text-align: left !important;
+  width: auto !important;
 }
 
 .feedback-pagination .swiper-pagination-bullet {
