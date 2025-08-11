@@ -1,16 +1,5 @@
 .page-header {
     background-color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    z-index: 1000;
-    transition: transform 750ms var(--main-cubic-bezier);
-}
-
-.page-header.hide {
-    transform: translateY(-100%);
 }
 
 .svg-icon-logo {
@@ -18,7 +7,7 @@
 }
 
 .container-header {
-    display:   flex;
+    display: flex;
     align-items: center;
     max-height: 72px;
     max-width: 375px;
@@ -47,8 +36,8 @@
     background: transparent;
     border: none;
     padding: 0;
-    transition: fill 250ms var(--main-cubic-bezier),
-        transform 250ms var(--main-cubic-bezier);
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mobile-menu-open-btn:hover,
@@ -67,7 +56,7 @@
 }
 
 /* Hide navigation on mobile and tablet */
-@media (max-width: 1279px) {
+@media (max-width: 1440px) {
 
     .page-nav {
         display: none;
@@ -87,16 +76,19 @@
 .mob-menu.is-open {
     position: fixed;
     top: 0;
+    /* right: 375px; */
     right: 0;
     transform: translateX(0);
     height: 100%;
     width: 100%;
     background: #fff;
-    transition: transform 750ms var(--main-cubic-bezier);
+    /* transform: translateX(100%); */
+    transition: transform 250ms ease-in-out;
 }
 
 .mob-menu-container-w-logo {
     padding: 0 20px;
+    /* overflow-x: hidden; */
     max-height: 69.86px;
     display: flex;
     align-items: center;
@@ -128,11 +120,13 @@
     padding: 5px;
     align-items: center;
     justify-content: center;
+    fill: black;
 }
 
 .mob-menu-close-icon {
-    stroke: #080c09;
-    transition: transform 750ms var(--main-cubic-bezier);
+    /* stroke: #fbfbfb; */
+    stroke-width: 2.5px;
+    transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .mob-menu-list {
@@ -170,6 +164,37 @@
 
 .mob-menu-item-link:is(.current, :hover, :focus)::after {
     opacity: 1;
+}
+
+.header-scroll-button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+    border-radius: 100px;
+    padding: 8px 20px;
+    max-width: 129px;
+    max-height: 42px;
+    box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+    background: #6b0609;
+}
+
+.header-scroll-button:hover,
+.header-scroll-button:focus {
+    border-radius: 100px;
+    max-width: 129px;
+    max-height: 42px;
+    box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+    background: #B8888A;
+}
+
+.to-buy-header {
+    margin-top: 32px;
+}
+
+.header-scroll-button {
+    min-width: 335px;
+    min-height: 42px;
 }
 
 /*tablet menu*/
@@ -251,6 +276,15 @@
         color: #080c09;
     }
 
+    .to-buy-header {
+        margin-top: 32px;
+    }
+
+    .header-scroll-button {
+        min-width: 185px;
+        min-height: 42px;
+    }
+
 }
 
 /*---desctop---*/
@@ -272,7 +306,8 @@
         color: #080c09;
         position: relative;
         transform: scale(1);
-        transition: opacity 750ms var(--main-cubic-bezier);
+        transition: transform 350ms cubic-bezier(0.4, 0, 0.2, 1),
+            opacity 350ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .nav-list-item:hover,
@@ -292,7 +327,7 @@
         font-size: 16px;
         line-height: 1.6;
         color: #080c09;
-        transition: opacity 250ms ease;
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
     }
 
@@ -301,7 +336,7 @@
         font-size: 16px;
         line-height: 1.6;
         color: #080c09;
-        transition: opacity 250ms var(--main-cubic-bezier);
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .header-scroll-button {
@@ -323,7 +358,7 @@
         max-width: 129px;
         max-height: 42px;
         box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-        background: #6b0609;
+        background: #B8888A;
         opacity: 0.5;
     }
 }
@@ -363,3 +398,6 @@ html {
     visibility: visible;
 }
 
+.display {
+    display: none;
+}

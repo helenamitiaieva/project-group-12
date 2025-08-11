@@ -78,7 +78,11 @@
 
     .hero-container {
         align-items: flex-start;
+        max-width: 704px;
     }
+        .hero-container{
+            margin: 0;
+        }
 
     .title-hero {
             width: 560px;
@@ -109,6 +113,10 @@
             .hero {
                 background-image: url('/img/hero/bg@2x-min.jpg');
             }
+        }
+        .hero-container {
+            max-width: 1440px;
+
         }
     
 }
@@ -181,7 +189,7 @@
     background: #6b0609;
     border-radius: 100px;
     letter-spacing: 0.01em;
-    width: 335px;
+    /* width: 335px; */
     min-height: 46px;
     display: flex;
     align-items: center;
