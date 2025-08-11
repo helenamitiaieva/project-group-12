@@ -4,6 +4,7 @@ const baseUrl = 'https://furniture-store.b.goit.study/api/furnitures';
 const modal_backdrop = document.querySelector('.furniture-modal-backdrop');
 const modal = document.querySelector('.furniture-modal');
 const close_button = document.querySelector('.furniture-modal-button-close');
+const order_button = document.querySelector('#order-button');
 
 close_button.addEventListener('click', () => {
     modal_backdrop.classList.remove('is-open');
@@ -24,8 +25,6 @@ export async function getFurniture()
         console.error(error);
     }
 }
-//тимчасові дані змінну потрибно створити при клику на кнопку "Детальніше"
-const furnitures = await getFurniture();
 
 export function createRating(rating) {
     let markup = '';
@@ -107,3 +106,7 @@ export function createFurnitureCard(furnitures, furnitureID) {
             }
     }
         
+
+    order_button.addEventListener('click', () => {
+    window.location.href = '../partials/order-modal.html';
+});
