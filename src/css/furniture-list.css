@@ -3,9 +3,9 @@
 }
 
 .furniture-cnt{
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .text-content {
@@ -39,6 +39,7 @@
 .item-category{ 
     width: calc((100% - 16px) / 2);
     height: 122px;
+    border-radius: 8px;
 }
 
 .btn-category{
@@ -48,6 +49,12 @@
     color: #ffffff;
     background-size: cover;
     border-radius: 8px;
+    transition: transform 250ms (--main-cubic-bezier);          
+}
+
+.btn-category:hover,
+.btn-category:hover {
+    transform: scale(1.05);
 }
 
 .btn-category.active {
@@ -171,7 +178,7 @@
             0 1px 2px 0 rgba(0, 0, 0, 0.05),
             inset 0 -2px 1px 0 rgba(0, 0, 0, 0.05),
             inset 0 0 0 1px rgba(0, 0, 0, 0.05);
-    transition: opacity 250ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
+    transition: opacity 250ms var(--main-cubic-bezier);
 }
     
 .details-btn:hover,
@@ -194,7 +201,7 @@
         inset 0 0 0 1px rgba(0, 0, 0, 0.15),
         inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
         inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-    transition: opacity 250ms cubic-bezier(0.6, 0.04, 0.98, 0.335);
+transition: opacity 250ms var(--main-cubic-bezier);
 }
 
 .btn-download:hover,
@@ -203,10 +210,21 @@
 }
 
 .loader {
-    font-weight: 600;
-    font-size: 18px;
-    line-height: 1.6;
-    letter-spacing: 0.01em;       
+    width: 40px;
+    height: 40px;
+    border: 6px solid #d8d6d3;
+    border-top-color: #6B0609;
+    border-radius: 50%;
+    animation: spin 1s ease-in-out infinite;
+    display: block;
+    margin: 60px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.678);
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .hidden {
@@ -244,6 +262,11 @@
     width: 340px;
     margin: auto;
 }
+
+.loader {
+    width: 50px;
+    height: 50px;
+}
 }
 
 /* -------------------------------------------- */
@@ -261,5 +284,10 @@
 .product-card {
     width: 310px;
         height: 435px;
+}
+
+.loader {
+    width: 60px;
+    height: 60px;
 }
 }
