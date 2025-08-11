@@ -1,11 +1,6 @@
 .about-us {
     padding: 32px 0;
-}
-
-.about-us img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+    background-color: #F0E6E6;
 }
 
 .about-us-container {
@@ -25,7 +20,6 @@
 }
 
 .about-us-text {
-    font-family: 'Relaway Regular', sans-serif;
     font-weight: 400;
     font-size: 18px;
     line-height: 1.5;
@@ -41,19 +35,15 @@
 
     .about-us-container{
         flex-direction: row;
-        gap: 40px;
+        gap: 24px;
         justify-content: center;
         align-items: center;
     }
-
-    .about-us-container > div {
-        flex: 1;
-    }
-
-    .about-us img {
-        flex: 1;
-        max-width: 50%;
-    }
+    
+        .div-text-about {
+            height: 198px;
+            width: 647px;
+        }
 
     .about-us-title {
         text-align: left;

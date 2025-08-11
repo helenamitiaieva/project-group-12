@@ -49,7 +49,7 @@
     color: #ffffff;
     background-size: cover;
     border-radius: 8px;
-    transition: transform 500ms ease, border 500ms ease;         
+    transition: transform 150ms var(--main-cubic-bezier);         
 }
 
 .btn-category:hover,
@@ -178,7 +178,7 @@
             0 1px 2px 0 rgba(0, 0, 0, 0.05),
             inset 0 -2px 1px 0 rgba(0, 0, 0, 0.05),
             inset 0 0 0 1px rgba(0, 0, 0, 0.05);
-    transition: opacity 500ms ease;
+    transition: opacity 500ms var(--main-cubic-bezier);
 }
     
 .details-btn:hover,
@@ -201,7 +201,7 @@
         inset 0 0 0 1px rgba(0, 0, 0, 0.15),
         inset 0 2px 1px 0 rgba(255, 255, 255, 0.25),
         inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-transition: opacity 250ms var(--main-cubic-bezier);
+transition: opacity 500ms var(--main-cubic-bezier);
 }
 
 .btn-download:hover,

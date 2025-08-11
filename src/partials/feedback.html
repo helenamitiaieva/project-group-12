@@ -1,5 +1,5 @@
 <section class="feedback" id="feedback">
-  <div class="container">
+  <div class="container container-feedback">
     <h2 class="feedback-title">Відгуки клієнтів</h2>
     <p class="feedback-subtitle">
       Дізнайтеся, що кажуть наші задоволені клієнти про наші меблі.
@@ -8,31 +8,51 @@
     <div class="feedback-slider swiper">
       <div class="swiper-wrapper" id="feedback-list"></div>
 
-       <div class="feedback-container-buttons">
-         <div class="feedback-buttons">
-          <button class="feedback-btn prev" type="button" aria-label="Попередній відгук">
-            <svg width="32" height="32"><use href="../img/svg-icon.svg#left-arrow"></use></svg>
+      <div class="feedback-container-buttons">
+        <div class="feedback-buttons">
+          <button
+            class="feedback-btn prev"
+            type="button"
+            aria-label="Попередній відгук"
+          >
+            <svg width="32" height="32">
+              <use href="../img/svg-icon.svg#left-arrow"></use>
+            </svg>
           </button>
-          <button class="feedback-btn next" type="button" aria-label="Наступний відгук">
-            <svg width="32" height="32"><use href="../img/svg-icon.svg#right-arrow"></use></svg>
+          <button
+            class="feedback-btn next"
+            type="button"
+            aria-label="Наступний відгук"
+          >
+            <svg width="32" height="32">
+              <use href="../img/svg-icon.svg#right-arrow"></use>
+            </svg>
           </button>
-               </div>
-         
-               <div class="feedback-pagination swiper-pagination"></div>
-       </div>
+        </div>
+
+        <div class="feedback-pagination swiper-pagination"></div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- SVG sprite -->
-<svg style="display: none;">
+<svg style="display: none">
   <symbol id="icon-arrow-left" viewBox="0 0 24 24">
-    <path d="M15 18l-6-6 6-6" stroke="currentColor" fill="none" stroke-width="2"/>
+    <path
+      d="M15 18l-6-6 6-6"
+      stroke="currentColor"
+      fill="none"
+      stroke-width="2"
+    />
   </symbol>
   <symbol id="icon-arrow-right" viewBox="0 0 24 24">
-    <path d="M9 6l6 6-6 6" stroke="currentColor" fill="none" stroke-width="2"/>
+    <path d="M9 6l6 6-6 6" stroke="currentColor" fill="none" stroke-width="2" />
   </symbol>
   <symbol id="icon-star" viewBox="0 0 24 24">
-    <path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z" fill="currentColor"/>
+    <path
+      d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"
+      fill="currentColor"
+    />
   </symbol>
 </svg>

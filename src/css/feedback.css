@@ -1,7 +1,10 @@
 .feedback {
   padding: 43px 0;
   text-align: center;
-  position: relative; /* Щоб кнопки та пагінація позиціонувались всередині секції */
+}
+.container-feedback {
+  position: relative;
+    
 }
 
 .feedback-title {
@@ -53,9 +56,9 @@ padding-bottom: 15px;
 .feedback-buttons {
   position: absolute;
   top: 90%;
-  right: 25px; /* Відступ від правого краю */
+  right: 0; 
   display: flex;
-  flex-direction: row; /* Кнопки одна над одною */
+  flex-direction: row; 
   gap: 10px;
   transform: translateY(-50%);
   pointer-events: auto;
