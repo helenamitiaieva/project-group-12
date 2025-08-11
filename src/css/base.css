@@ -24,11 +24,9 @@ body {
   background-color: #fff;
   font-size: 18px;
   font-weight: 700;
-  line-height:  1.4; 
-  color: #080C09;
+  line-height: 1.4;
+  color: #080c09;
 }
-
-
 
 @media screen and (min-width: 768px) {
   body {
@@ -55,4 +53,9 @@ html {
 .is-open {
   opacity: 1;
   visibility: visible;
- } 
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
