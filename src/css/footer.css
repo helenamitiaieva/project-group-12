@@ -1,115 +1,120 @@
-/* styles for footer section */
-
-.social-icon-placeholder {
-    width: 24px;
-    height: 24px;
-    background-color: white;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    user-select: none;
-}
-/* ----------------------- */
-/* Общий контейнер футера */
-.site-footer {
+.footer {
+    padding-bottom: 32px;
     background-color: #6B0609;
-    color: white;
-    padding: 0 64px;
-    width: 1440px;
+}
+
+.footer-container {
+    display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 228px;
     height: 97px;
-    font-family: Arial, sans-serif;
-    font-size: 14px;
-    box-sizing: border-box;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 80px;
 }
 
-/* Логотип + название */
-.site-footer__logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    flex-shrink: 0;
+.footer-svg-logo {
+    fill: #ffffff;
 }
 
-.site-footer__logo-placeholder {
-    width: 40px;
-    height: 40px;
-    background-color: #4B0000;
-    color: white;
-    font-weight: bold;
-    font-size: 24px;
+.footer-list-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 32px;
+}
+
+.footer-item-link {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ffffff;
+}
+
+.footer-list-social {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
-    user-select: none;
-    margin-right: 8px;
-    font-family: Arial, sans-serif;
-}
-
-.site-footer__brand-name {
-    font-weight: 600;
-    font-size: 18px;
-}
-
-/* Авторские права */
-.site-footer__copyright {
-    user-select: none;
-    flex-shrink: 0;
-    white-space: nowrap;
-    font-weight: 400;
-    font-size: 14px;
-}
-
-/* Навигация */
-.site-footer__nav-list {
-    list-style: none;
-    display: flex;
-    gap: 80px;
-    margin: 0;
-    padding: 0;
-}
-
-.site-footer__nav-link {
-    color: white;
-    text-decoration: none;
-    cursor: pointer;
-    transition: color 0.3s ease;
-    white-space: nowrap;
-}
-
-.site-footer__nav-link:hover,
-.site-footer__nav-link:focus {
-    color: #ddd;
-}
-
-/* Соцсети */
-.site-footer__socials .social-icons {
-    display: flex;
+    width: 120px;
+    height: 24px;
     gap: 24px;
-    align-items: center;
 }
 
-.site-footer__socials .social-icons a svg {
-    stroke: white;
-    fill: white;
+.footer-item-social {
     width: 24px;
     height: 24px;
-    transition: stroke 0.3s ease, fill 0.3s ease;
-    cursor: pointer;
 }
 
-.site-footer__socials .social-icons a:hover svg,
-.site-footer__socials .social-icons a:focus svg {
-    stroke: #ddd;
-    fill: #ddd;
+.link-social{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.social-svg {
+    fill: #ffffff;
+}
+
+.social-svg-instagram {
+    fill: #080c09;
+}
+
+.footer-rights {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.6;
+    width: 100%;
+    height: 19px;
+    text-align: center;
+    color: #ffffff;
+}
+
+/* ---------------------------------------------------- */
+
+@media screen and (min-width: 768px){
+.footer-list-link {
+    flex-direction: row;
+    width: 409px;
+    height: 26px;
+}
+
+.footer-rights{
+    width: 704px;
+    height: 22px;
+    font-size: 14px;
+}
+}
+
+/* ----------------------------------------------------- */
+
+@media screen and (min-width: 1440px){
+
+.footer {
+    padding-bottom: 0;
+}
+
+.footer-container {
+    flex-direction: row;
+    gap: 0;
+    position: relative;
+}
+
+.footer-list-link {
+    margin: 0 80px 0 474px;
+    width: 409px;
+    height: 26px;
+}
+
+.footer-rights {
+    position: absolute;
+    left: 374px;
+    width: 315px;
+    height: 22px;
+}
 }

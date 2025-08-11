@@ -7,7 +7,6 @@ import './js/faq.js';
 import './js/feedback.js';
 import './js/furniture-modal.js';
 import './js/order-modal.js';
-import './js/footer.js';
 
 import { getFurnitures } from './js/api.js';
 // Для перевiрки (приклад, щоб побачити data)

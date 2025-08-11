@@ -28,6 +28,8 @@ body {
   color: #080C09;
 }
 
+
+
 @media screen and (min-width: 768px) {
   body {
     font-size: 20px;
