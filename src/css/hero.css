@@ -156,7 +156,7 @@
     line-height: 1.6;
     color: #fff;
     font-family: "Raleway", sans-serif;
-    transition:  opacity 250ms var(--main-cubic-bezier);
+    transition:  opacity 2s var(--main-cubic-bezier);
 }
 
 .hero-scroll:hover,

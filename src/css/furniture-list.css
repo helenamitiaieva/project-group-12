@@ -49,11 +49,11 @@
     color: #ffffff;
     background-size: cover;
     border-radius: 8px;
-    transition: transform 250ms (--main-cubic-bezier);          
+    transition: transform 500ms ease, border 500ms ease;         
 }
 
 .btn-category:hover,
-.btn-category:hover {
+.btn-category:focus {
     transform: scale(1.05);
 }
 
@@ -178,7 +178,7 @@
             0 1px 2px 0 rgba(0, 0, 0, 0.05),
             inset 0 -2px 1px 0 rgba(0, 0, 0, 0.05),
             inset 0 0 0 1px rgba(0, 0, 0, 0.05);
-    transition: opacity 250ms var(--main-cubic-bezier);
+    transition: opacity 500ms ease;
 }
     
 .details-btn:hover,
