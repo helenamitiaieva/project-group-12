@@ -46,6 +46,10 @@ margin-bottom: 32px;
   align-items: center;
 }
 
+.faq-question svg {
+    flex-shrink: 0; /* иконка не сжимается */
+  }
+
 .faq-question:hover {
   color: #6b0609; 
 }
