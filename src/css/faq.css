@@ -1,10 +1,19 @@
-
-.faq {
-  padding: 48px 0;
-  height: 100%;
+.container {
+  min-width: 320px;
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
 }
 
-.title-faq {
+.faq {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 50px auto;
+}
+
+.faq h2 {
 font-weight: 700;
 font-size: 36px;
 line-height: 120%;
@@ -23,8 +32,9 @@ margin-bottom: 32px;
 }
 
 .faq-question {
+  font-weight: 700;
   font-size: 16px;
-  line-height: 1.6;
+  line-height: 160%;
   color: #080c09;
   width: 100%;
   background: none;
@@ -34,20 +44,22 @@ margin-bottom: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-.text-faq {
-font-weight: 400;
-font-size: 16px;
-line-height: 1.6;
+  transition: all 250ms ease;
 }
 
 .faq-question svg {
     flex-shrink: 0; 
   }
 
+.faq-question:hover {
+  color: #6b0609; 
+}
+
+.faq-question:hover .faq-arrow {
+  fill: #6b0609; 
+}
+
 .faq-arrow {
-  stroke: #080c09;
   transition: transform 0.3s ease;
 }
 
@@ -67,8 +79,12 @@ line-height: 1.6;
 }
 
 @media screen and (min-width: 768px) {
-  
-  .title-faq {
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  .faq h2 {
   font-size: 48px;
 }
 
@@ -81,10 +97,11 @@ line-height: 1.6;
 
 
 @media screen and (min-width: 1440px) {
-  .faq {
-      padding: 80px 0;
-    }
-    
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 64px;
+  }
   .faq-item-container {
     width: 865px;
     height: 360px;

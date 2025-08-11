@@ -3,8 +3,7 @@
   text-align: center;
 }
 .container-feedback {
-  position: relative;
-    
+  position: relative;  
 }
 
 .feedback-title {
@@ -82,7 +81,6 @@ z-index: 10;
 .feedback-btn svg {
     width: 32px;
     height: auto;
-    fill: #000;
   }
 
 .feedback-btn:disabled {
@@ -92,11 +90,10 @@ z-index: 10;
 
 .feedback-btn:hover:not(:disabled),
 .feedback-btn:focus:not(:disabled) {
-  background: #f0f0f0;
-  border-color: #999;
+  background: #975052;
+  border-color: rgba(8, 12, 9, 0.15);
+  fill: #fff;
 }
-
-
 
 .feedback-pagination {
   position: absolute;
