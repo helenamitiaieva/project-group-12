@@ -11,14 +11,12 @@ export async function getFurnitures({ category = null, page = 1, limit = 8 } = {
  
 // Отримати меблі по ID
 export async function getFurnitureById(id) {
-  const { data } = await axios.get(`${BASE_URL}/furnitures/${id}`, {params});
+  const { data } = await axios.get(`${BASE_URL}/furnitures/${id}`);
   return data;
 }
 
 // Отримати список категорій
-export async function getCategories({ category = null } = {}) {
-    const params = category ? { category } : {};
-
+export async function getCategories() {
   const { data } = await axios.get(`${BASE_URL}/categories`);
   return data;
 }
