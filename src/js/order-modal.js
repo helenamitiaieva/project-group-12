@@ -10,7 +10,7 @@ const form = document.querySelector('.order-modal-form');
 const btnOrder = document.querySelector('.order-modal-btn');
 
 btnOrder.disabled = true;
-openModal();
+
 if (openModalBtn) {
   openModalBtn.addEventListener('click', openModal);
 }
