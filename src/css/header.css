@@ -56,7 +56,7 @@
 }
 
 /* Hide navigation on mobile and tablet */
-@media (max-width: 1279px) {
+@media (max-width: 1440px) {
 
     .page-nav {
         display: none;
