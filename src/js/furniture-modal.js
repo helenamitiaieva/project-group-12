@@ -1,4 +1,5 @@
 import axios from 'axios';
+import iziToast from 'izitoast';
 const baseUrl = 'https://furniture-store.b.goit.study/api/furnitures';
 
 const modal_backdrop = document.querySelector('.furniture-modal-backdrop');
@@ -103,7 +104,15 @@ export function createFurnitureCard(furnitures, furnitureID) {
                   <button class="furniture-modal-order-button" type="button" id="order-button">Перейти до замовлення</button>
                </div>`;
                 modal.insertAdjacentHTML('beforeend', markup);
-            }
+    }
+    else {
+        iziToast.info({
+        icon: 'Info',
+        message: 'Товар не знайдено',
+        position: 'topRight',
+        });
+    }
+
     }
         
 
