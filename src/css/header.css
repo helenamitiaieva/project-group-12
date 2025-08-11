@@ -131,8 +131,7 @@
 }
 
 .mob-menu-close-icon {
-    stroke: #fbfbfb;
-    stroke-width: 2.5px;
+    stroke: #080c09;
     transition: transform 750ms var(--main-cubic-bezier);
 }
 
