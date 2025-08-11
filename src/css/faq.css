@@ -60,7 +60,7 @@ margin-bottom: 32px;
 .faq-answer {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height 400ms ease;
 }
 
 .faq-answer p {
@@ -71,7 +71,7 @@ margin-bottom: 32px;
 .ac-panel {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease;
+  transition: max-height 400ms ease;
 }
 
 .ac.is-active .faq-arrow {

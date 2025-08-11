@@ -34,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     duration: 400,
     showMultiple: false,
     collapse: true,
-    openOnInit: [0],
     onlyChildNodes: true
   });
   console.log('[FAQ] Accordion inițializat:', acc);
