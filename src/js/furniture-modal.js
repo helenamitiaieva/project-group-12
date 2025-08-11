@@ -107,6 +107,17 @@ export function createFurnitureCard(furnitures, furnitureID) {
     }
         
 
-    order_button.addEventListener('click', () => {
-    window.location.href = '../partials/order-modal.html';
-});
+  order_button.addEventListener('click', () => {
+      window.location.href = '../partials/order-modal.html';
+      closeModal();
+  });
+
+  function closeModal() {
+    modal_backdrop.classList.remove('is-open');
+    modal.innerHTML = `<button class="furniture-modal-button-close" type="button" data-modal-close>
+    <svg>
+      <use href="../img/icons.svg#icon-x"></use>
+    </svg>
+  </button>
+`;
+}
