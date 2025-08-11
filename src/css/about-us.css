@@ -1,11 +1,7 @@
 .about-us {
-    padding: 32px 0;
-}
-
-.about-us img {
-    display: block;
-    max-width: 100%;
-    height: auto;
+    padding: 64px 0;
+    background-color: #F0E6E6;
+    margin: 0;
 }
 
 .about-us-container {
@@ -18,20 +14,23 @@
 .about-us-title {
     font-size: 36px;
     line-height: 1.11;
-    text-align: center;
+    text-align: left;
     letter-spacing: 0.03em;
     color: #212121;
     margin-bottom: 24px;
 }
 
 .about-us-text {
-    font-family: 'Relaway Regular', sans-serif;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
-    text-align: center;
+    text-align: left;
     letter-spacing: 0.03em;
     color: #757575;
+}
+
+.networks-wrapp-img {
+    border-radius: 8px;
 }
 
 @media (min-width: 1400px) {
@@ -41,23 +40,16 @@
 
     .about-us-container{
         flex-direction: row;
-        gap: 40px;
+        gap: 24px;
         justify-content: center;
         align-items: center;
     }
+    
+        .div-text-about {
+            height: 198px;
+            width: 647px;
+        }
 
-    .about-us-container > div {
-        flex: 1;
-    }
-
-    .about-us img {
-        flex: 1;
-        max-width: 50%;
-    }
-
-    .about-us-title {
-        text-align: left;
-    }
 
     .about-us-text {
         text-align: left;

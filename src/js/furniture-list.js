@@ -1,6 +1,8 @@
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { getFurnitures, getCategories } from './api.js';
+import { createFurnitureCard } from './furniture-modal.js';
+
 
 const categoriesList = document.querySelector('.list-categories');
 const furnitureList = document.querySelector('.list-furniture');
@@ -10,6 +12,7 @@ const downloadButton = document.querySelector('.btn-download');
 let categoryId = null;
 let page = 1;
 let totalPages = 0;
+let currentFurnitures = []; // Сохраняем текущие данные о мебели
 
 initFurniture(); 
 initCategories();
@@ -69,9 +72,15 @@ async function initFurniture(categoryId, pageNum = 1, isLoadMore = false) {
 
     if (!isLoadMore) {
       furnitureList.innerHTML = '';
+      currentFurnitures = []; // Очищаем при новой загрузке
     }
 
-    furnitures.forEach(({ name, description, images, price, color }) => {
+    // Добавляем новые товары к существующим
+    currentFurnitures = [...currentFurnitures, ...furnitures];
+
+    furnitures.forEach((furniture, index) => {
+      const globalIndex = currentFurnitures.length - furnitures.length + index;
+      const { _id, name, description, images, price, color } = furniture;
       const markup = `
         <li class="product-card">
           <img src="${images?.[0]}" alt="${description}" class="product-image" />
@@ -82,7 +91,7 @@ async function initFurniture(categoryId, pageNum = 1, isLoadMore = false) {
             <li class="dot" style="background-color:${color?.[2]}"></li>
           </ul>
           <p class="price">${price} грн</p>
-          <button type="button" class="details-btn">Детальніше</button>
+          <button type="button" class="details-btn" data-index="${globalIndex}" data-id="${_id}">Детальніше</button>
         </li>`;
       furnitureList.insertAdjacentHTML('beforeend', markup);
     });
@@ -108,3 +117,18 @@ downloadButton.addEventListener('click', async () => {
   await initFurniture(categoryId, page, true);
 });
 
+furnitureList.addEventListener('click', event => {
+  const detailsBtn = event.target.closest('.details-btn');
+  if (!detailsBtn) return;
+
+  //Знаходимо потрібний товар за індексом
+  const furnitureIndex = parseInt(detailsBtn.dataset.index);
+  if (isNaN(furnitureIndex) || !currentFurnitures[furnitureIndex]) return;
+
+  //Відкриваємо модальне вікно
+  const modalBackdrop = document.querySelector('.furniture-modal-backdrop');
+  modalBackdrop.classList.add('is-open');
+
+  //Створюємо картку
+  createFurnitureCard(currentFurnitures[furnitureIndex]);
+});

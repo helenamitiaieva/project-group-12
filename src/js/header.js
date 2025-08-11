@@ -1,48 +1,53 @@
-
-
 (() => {
   const mobileMenu = document.querySelector('.js-menu-container');
   const openMenuBtn = document.querySelector('.mobile-menu-open-btn');
   const closeMenuBtn = document.querySelector('.js-close-menu');
-  const menuLinks = document.querySelectorAll('.nav-list-item-link');
+  const menu = document.querySelector('.mob-menu');
+  const menuLinks = document.querySelectorAll('.mob-menu-item-link');
 
-  const openMenu = () => {
+  function openMobileMenu() {
     mobileMenu.classList.add('is-open');
-    openMenuBtn.classList.add('hiden');
     closeMenuBtn.classList.remove('hiden-close');
+    closeMenuBtn.classList.add('is-open');
+    openMenuBtn.classList.add('hiden');
+    menu.classList.remove('display');
     document.body.style.overflow = 'hidden';
-  };
+  }
 
-  const closeMenu = () => {
+  function closeMobileMenu() {
     mobileMenu.classList.remove('is-open');
+    closeMenuBtn.classList.remove('is-open');
     openMenuBtn.classList.remove('hiden');
-    closeMenuBtn.classList.add('hiden-close');
+    menu.classList.add('display');
     document.body.style.overflow = '';
-  };
+  }
 
-  openMenuBtn.addEventListener('click', openMenu);
-  closeMenuBtn.addEventListener('click', closeMenu);
+  // Відкриття меню
+  openMenuBtn.addEventListener('click', openMobileMenu);
 
-  // Закриття при кліку на посилання меню
+  // Закриття меню по кнопці
+  closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+  // Закриття по кліку на посилання меню
   menuLinks.forEach(link => {
-    link.addEventListener('click', closeMenu);
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Закриття по Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+      closeMobileMenu();
+    }
   });
 
   // Закриття при кліку поза меню
-  document.addEventListener('click', e => {
+  document.addEventListener('click', (e) => {
     if (
       mobileMenu.classList.contains('is-open') &&
       !mobileMenu.contains(e.target) &&
       !openMenuBtn.contains(e.target)
     ) {
-      closeMenu();
-    }
-  });
-
-  // Закриття по Escape
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') {
-      closeMenu();
+      closeMobileMenu();
     }
   });
 })();

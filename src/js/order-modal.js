@@ -37,7 +37,7 @@ function checkInputs() {
   btnOrder.disabled = !allValid;
 }
 
-function openModal() {
+export function openModal() {
   backdrop.classList.add('is-open');
   document.body.classList.add('no-scroll');
 
@@ -52,7 +52,7 @@ function openModal() {
   }
 }
 
-function closeModal(event) {
+export function closeModal(event) {
   if (
     event &&
     event.target !== closeModalBtn &&

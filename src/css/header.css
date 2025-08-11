@@ -56,7 +56,7 @@
 }
 
 /* Hide navigation on mobile and tablet */
-@media (max-width: 1279px) {
+@media (max-width: 1440px) {
 
     .page-nav {
         display: none;
@@ -120,10 +120,11 @@
     padding: 5px;
     align-items: center;
     justify-content: center;
+    fill: black;
 }
 
 .mob-menu-close-icon {
-    stroke: #fbfbfb;
+    /* stroke: #fbfbfb; */
     stroke-width: 2.5px;
     transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -163,6 +164,37 @@
 
 .mob-menu-item-link:is(.current, :hover, :focus)::after {
     opacity: 1;
+}
+
+.header-scroll-button {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #fff;
+    border-radius: 100px;
+    padding: 8px 20px;
+    max-width: 129px;
+    max-height: 42px;
+    box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+    background: #6b0609;
+}
+
+.header-scroll-button:hover,
+.header-scroll-button:focus {
+    border-radius: 100px;
+    max-width: 129px;
+    max-height: 42px;
+    box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
+    background: #B8888A;
+}
+
+.to-buy-header {
+    margin-top: 32px;
+}
+
+.header-scroll-button {
+    min-width: 335px;
+    min-height: 42px;
 }
 
 /*tablet menu*/
@@ -244,6 +276,15 @@
         color: #080c09;
     }
 
+    .to-buy-header {
+        margin-top: 32px;
+    }
+
+    .header-scroll-button {
+        min-width: 185px;
+        min-height: 42px;
+    }
+
 }
 
 /*---desctop---*/
@@ -317,7 +358,7 @@
         max-width: 129px;
         max-height: 42px;
         box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
-        background: #6b0609;
+        background: #B8888A;
         opacity: 0.5;
     }
 }
@@ -328,8 +369,6 @@
         transform: translateX(calc(50% - 100px));
     } */
 }
-
-
 
 .header-scroll-button:hover,
 .hero-scroll:hover,
@@ -357,4 +396,8 @@ html {
 .is-open {
     opacity: 1;
     visibility: visible;
+}
+
+.display {
+    display: none;
 }

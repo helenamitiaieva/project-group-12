@@ -54,4 +54,9 @@ html {
 .is-open {
   opacity: 1;
   visibility: visible;
- } 
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100vh;
+}
