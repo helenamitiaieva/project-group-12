@@ -124,7 +124,7 @@
 }
 
 .mob-menu-close-icon {
-    stroke: #fbfbfb;
+    /* stroke: #fbfbfb; */
     stroke-width: 2.5px;
     transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
