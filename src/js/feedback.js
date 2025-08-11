@@ -10,19 +10,19 @@ function renderStarsPrecise(rate, max = 5) {
   let html = '';
 
   for (let i = 0; i < max; i++) {
-    const portion = Math.max(0, Math.min(1, r - i)); // 0..1
-    const percent = Math.round(portion * 100);       // 0..100
+    const portion = Math.max(0, Math.min(1, r - i)); 
+    const percent = Math.round(portion * 100);     
     const maskId = `star-mask-${i}-${Math.random().toString(36).slice(2,7)}`;
 
     html += `
 <svg class="star" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
   <defs>
     <mask id="${maskId}">
-      <use href="../img/symbol-defs.svg#icon-star" fill="#fff"></use>
+      <use href="./symbol-defs.svg#icon-star" fill="#fff"></use>
     </mask>
   </defs>
 
-  <use href="../img/symbol-defs.svg#icon-star" fill="#dfdfdf"></use>
+  <use href="./symbol-defs.svg#icon-star" fill="#dfdfdf"></use>
 
   <rect x="0" y="0" width="${percent}%" height="100%" fill="#000" mask="url(#${maskId})"></rect>
 </svg>`;
