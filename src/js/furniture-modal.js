@@ -24,7 +24,7 @@ export async function getFurniture()
         console.error(error);
     }
 }
-
+//тимчасові дані змінну потрибно створити при клику на кнопку "Детальніше"
 const furnitures = await getFurniture();
 
 export function createRating(rating) {
