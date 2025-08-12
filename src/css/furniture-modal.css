@@ -29,22 +29,6 @@ button {
     pointer-events: auto;
 }
 
-/* .furniture-modal 
-{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 4px;
-    width: 335px;
-    min-height: 623px;
-    padding: 64px 20px 40px;
-    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 01px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgb(0, 0, 0, 0.2);
-    background-color: #fcfcfc;
-    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-} */
-
-
 .furniture-modal {
     position: absolute;
     top: 50%;
@@ -53,8 +37,8 @@ button {
     border-radius: 4px;
     width: 90vw;
     max-width: 335px;
-    max-height: 90vh;
-    padding: 64px 20px 40px;
+    max-height: 85vh;
+    padding: 40px 20px 30px;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
     background-color: #fcfcfc;
     transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -69,8 +53,8 @@ button {
     position: absolute;
     top: 16px;
     right: 16px;
-    width: 32px;
-    height: 32px;
+    width: 16px;
+    height: 16px;
     background-color: transparent;
     border: none;
     padding: 0;
@@ -79,11 +63,16 @@ button {
     justify-content: center;
     cursor: pointer;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    svg {
+            fill: black;
+            width: 100%;
+            height: 100%;
+        }
 }
 
 .furniture-modal-button-close:hover svg,
 .furniture-modal-button-close:focus svg {
-    transition: fill 250ms cubic-bezier(0, 0, 0, 0.4);
+    opacity: 0.5;
 }
 
 
@@ -165,7 +154,6 @@ button {
     margin-bottom: 32px;
 }
 
-
 /* rating */
 .furniture-modal-rating-list {
     display: flex;
@@ -173,6 +161,11 @@ button {
     align-items: center;
     gap: 4px;
     margin-bottom: 24px;
+}
+
+.furniture-modal-rating-list svg {
+    fill: black;
+    stroke: black;
 }
 
 
@@ -188,13 +181,13 @@ button {
     width: 32px;
     height: 32px;
     border-radius: 50%;
-    border: 1px solid;
+    border: 1px solid #ccc;
     border: 4px solid var(--color-neutral);
 }
 
 .furniture-modal-colors-item:focus,
 .furniture-modal-colors-item:hover {
-    border: 4px solid gray;
+    border: 4px solid ;
 }
 
 /* order button */
@@ -225,10 +218,10 @@ button {
 @media(min-width: 768px) {
 
     .furniture-modal {
-
         width: 90vw;
         max-width: 705px;
-        max-height: 90vh;
+        max-height: 85vh;
+        padding: 50px 40px 35px;
     }
 
     /* Sub-images */
@@ -254,10 +247,22 @@ button {
 
     .furniture-modal {
         max-width: 1090px;
+        max-height: 80vh;
         display: flex;
         gap: 24px;
         align-items: flex-start;
         justify-content: center;
+        padding: 50px 60px 40px;
+    }
+
+    #images {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .furniture-modal-content {
+        flex: 1;
+        min-width: 0;
     }
 
     /* p */

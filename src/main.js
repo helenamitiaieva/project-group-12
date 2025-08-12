@@ -1,6 +1,5 @@
 
 import './js/header.js';
-import './js/hero.js';
 import './js/furniture-list.js';
 import './js/faq.js';
 import './js/feedback.js';

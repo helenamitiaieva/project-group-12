@@ -4,8 +4,7 @@
 }
 
 .container-feedback {
-  position: relative;
-    
+  position: relative;  
 }
 
 .feedback-title {
@@ -103,8 +102,19 @@ z-index: 10;
 .feedback-btn svg {
     width: 32px;
     height: auto;
-    fill: #000;
   }
+
+.feedback-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.feedback-btn:hover:not(:disabled),
+.feedback-btn:focus:not(:disabled) {
+  background: #975052;
+  border-color: rgba(8, 12, 9, 0.15);
+  fill: #fff;
+}
 
 .feedback-pagination {
   position: absolute;
