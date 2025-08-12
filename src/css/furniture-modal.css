@@ -109,7 +109,6 @@ button {
     line-height: 1.3;  
 }
 
-}
 
 /* price */
 .furniture-modal-price {
@@ -201,6 +200,7 @@ button {
     max-height: 85vh;
     padding: 50px 40px 35px;
   }
+}
 
 @media screen and (min-width: 768px) {
 
@@ -240,15 +240,14 @@ button {
 
     /* p */
     .furniture-modal-text#description {
-    
         width: 421px;
-            height: 78px;
+        height: 100%;
     }
 
     /* order button */
     .furniture-modal-order-button {
         width: 310px;
-            height: 46px;
+        height: 46px;
     }
 }
 
@@ -262,6 +261,7 @@ button {
     justify-content: center;
     padding: 50px 60px 40px;
   }
+}
 
 @media screen and (min-width: 1440px) {
 
@@ -296,4 +296,3 @@ button {
         width: 80%;
     }
 }
-
