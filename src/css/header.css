@@ -63,7 +63,7 @@ header.hide {
     }
 }
 
-@media (max-width: 1440px) {
+@media (max-width: 1439px) {
 
     .page-nav {
         display: none;
@@ -190,10 +190,16 @@ header.hide {
 }
 
 .header-scroll-button {
-    min-width: 335px;
+    min-width: 320px;
     min-height: 42px;
+    max-width: 335px;
 }
-
+@media (min-width: 375px) {
+.header-scroll-button {
+        min-width: 335px;
+        min-height: 42px;
+    }
+}
 @media (min-width: 768px) {
 
     .mob-menu-logo {
@@ -351,4 +357,8 @@ html {
 .display {
     display: none;
 }
+}
+
+.mob-menu {
+    position: absolute;
 }
