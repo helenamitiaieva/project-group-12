@@ -6,11 +6,6 @@ import { openModal } from './order-modal';
 function closeModal() {
   modalBackdrop.classList.remove('is-open');
   document.body.classList.remove('no-scroll');
-  //   modal.innerHTML = `<button class="furniture-modal-button-close" type="button" data-modal-close>
-  //         <svg>
-  //           <use href="./public/symbol-defs.svg#icon-x"></use>
-  //         </svg>
-  //       </button>`;
 }
 
 modal.addEventListener('click', event => {
@@ -25,21 +20,18 @@ modalBackdrop.addEventListener('click', event => {
   }
 });
 
-// Обработчик для кнопки заказа
 modal.addEventListener('click', event => {
   if (event.target.closest('.furniture-modal-order-button')) {
     const orderButton = event.target.closest('.furniture-modal-order-button');
    
-    selectedFurniture = {
-      id: btn.dataset.furnitureId,
-      name: btn.dataset.furnitureName,
-      price: btn.dataset.furniturePrice
-    }
-
+    const furnitureId = orderButton.dataset.furnitureId;
+    const furnitureName = orderButton.dataset.furnitureName;
+    const furniturePrice = orderButton.dataset.furniturePrice;
     closeModal();
     selectedFurniture = {
       modelId: furnitureId,
     };
+    
     openModal();
   }
 });
@@ -104,6 +96,7 @@ export function createRating(rate, max = 5) {
     <rect x="0" y="0" width="${percent}%" height="100%" fill="#6B0609" mask="url(#${maskId})"></rect>
   </svg>
 </li>`;
+
   }
   return html;
 }

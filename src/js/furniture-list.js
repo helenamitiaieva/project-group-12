@@ -11,7 +11,7 @@ const downloadButton = document.querySelector('.btn-download');
 let categoryId = null;
 let page = 1;
 let totalPages = 0;
-let currentFurnitures = []; // Сохраняем текущие данные о мебели
+let currentFurnitures = []; 
 
 initFurniture();
 initCategories();
@@ -70,10 +70,9 @@ async function initFurniture(categoryId, pageNum = 1, isLoadMore = false) {
 
     if (!isLoadMore) {
       furnitureList.innerHTML = '';
-      currentFurnitures = []; // Очищаем при новой загрузке
+      currentFurnitures = [];
     }
 
-    // Добавляем новые товары к существующим
     currentFurnitures = [...currentFurnitures, ...furnitures];
 
     furnitures.forEach((furniture, index) => {
@@ -118,15 +117,12 @@ furnitureList.addEventListener('click', event => {
   const detailsBtn = event.target.closest('.details-btn');
   if (!detailsBtn) return;
 
-  //Знаходимо потрібний товар за індексом
   const furnitureIndex = parseInt(detailsBtn.dataset.index);
   if (isNaN(furnitureIndex) || !currentFurnitures[furnitureIndex]) return;
 
-  //Відкриваємо модальне вікно
   const modalBackdrop = document.querySelector('.furniture-modal-backdrop');
   modalBackdrop.classList.add('is-open');
   document.body.classList.add('no-scroll');
 
-  //Створюємо картку
   createFurnitureCard(currentFurnitures[furnitureIndex]);
 });

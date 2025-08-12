@@ -24,13 +24,10 @@
     document.body.style.overflow = '';
   }
 
-  // Відкриття меню
   openMenuBtn.addEventListener('click', openMobileMenu);
 
-  // Закриття меню по кнопці
   closeMenuBtn.addEventListener('click', closeMobileMenu);
 
-  // Закриття по кліку на посилання меню
   menuLinks.forEach(link => {
     link.addEventListener('click', closeMobileMenu);
   });
@@ -45,15 +42,12 @@
     });
   }
 
-
-  // Закриття по Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
       closeMobileMenu();
     }
   });
 
-  // Закриття при кліку поза меню
   document.addEventListener('click', (e) => {
     if (
       mobileMenu.classList.contains('is-open') &&
