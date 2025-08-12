@@ -19,7 +19,6 @@ modal.addEventListener('click', event => {
   }
 });
 
-// Закрытие по клику на backdrop
 modalBackdrop.addEventListener('click', event => {
   if (event.target === modalBackdrop) {
     closeModal();
@@ -30,22 +29,36 @@ modalBackdrop.addEventListener('click', event => {
 modal.addEventListener('click', event => {
   if (event.target.closest('.furniture-modal-order-button')) {
     const orderButton = event.target.closest('.furniture-modal-order-button');
-    const furnitureId = orderButton.dataset.furnitureId;
-    const furnitureName = orderButton.dataset.furnitureName;
-    const furniturePrice = orderButton.dataset.furniturePrice;
+   
+    selectedFurniture = {
+      id: btn.dataset.furnitureId,
+      name: btn.dataset.furnitureName,
+      price: btn.dataset.furniturePrice
+    }
 
-    // Закрываем модалку мебели
     closeModal();
     selectedFurniture = {
       modelId: furnitureId,
-      //додати color
     };
     openModal();
-
-    // Открываем модалку заказа
-    // openOrderModal(furnitureId, furnitureName, furniturePrice);
   }
 });
+
+modal.addEventListener('click', (e) => {
+  const colorItem = e.target.closest('.furniture-modal-colors-item');
+  if (colorItem) {
+
+    document.querySelectorAll('.furniture-modal-colors-item').forEach(item => {
+      item.style.border = 'none';
+      item.style.borderRadius = '';
+    });
+
+
+    colorItem.style.borderRadius = '64px';
+    colorItem.style.border = '4px solid #6B0609';
+  }
+});
+
 
 // Функция для открытия модалки заказа
 // function openOrderModal(furnitureId, furnitureName, furniturePrice) {
@@ -115,8 +128,8 @@ export function createFurnitureCard(furniture) {
     if (furniture) {
       const markup = `
                 <button class="furniture-modal-button-close" type="button" data-modal-close>
-                    <svg width="16" height="16"> 
-                        <use href="./public/icon.svg#icon-x"></use>
+                    <svg>
+                        <use href="./public/symbol-defs.svg#icon-x"></use>
                     </svg>
                 </button>
                 <div id="images">
