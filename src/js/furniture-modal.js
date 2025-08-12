@@ -64,11 +64,11 @@ export function createRating(rate, max = 5) {
   <svg class="star" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true">
     <defs>
       <mask id="${maskId}">
-        <use href="./public/symbol-defs.svg#icon-star-full" fill="#fff"></use>
+        <use href="./symbol-defs.svg#icon-star-full" fill="#fff"></use>
       </mask>
     </defs>
 
-    <use href="./public/symbol-defs.svg#icon-star-full" fill="#dfdfdf"></use>
+    <use href="./symbol-defs.svg#icon-star-full" fill="#dfdfdf"></use>
 
     <rect x="0" y="0" width="${percent}%" height="100%" fill="#6B0609" mask="url(#${maskId})"></rect>
   </svg>
