@@ -4,6 +4,8 @@
   const closeMenuBtn = document.querySelector('.js-close-menu');
   const menu = document.querySelector('.mob-menu');
   const menuLinks = document.querySelectorAll('.mob-menu-item-link');
+  const scrollBtn = document.querySelector('.header-scroll-button');
+  const targetSection = document.querySelector('#furniture');
 
   function openMobileMenu() {
     mobileMenu.classList.add('is-open');
@@ -33,6 +35,17 @@
     link.addEventListener('click', closeMobileMenu);
   });
 
+
+  if (scrollBtn && targetSection) {
+    scrollBtn.addEventListener('click', () => {
+      targetSection.scrollIntoView({ behavior: 'smooth' });
+      if (mobileMenu.classList.contains('is-open')) {
+        closeMobileMenu();
+      }
+    });
+  }
+
+
   // Закриття по Escape
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
@@ -49,5 +62,29 @@
     ) {
       closeMobileMenu();
     }
+
+    if (mobileMenu.classList.contains('is-open')) {
+      if (e.target.closest('.nav-list-item-link')) {
+        closeMobileMenu();
+      }
+      if (e.target.closest('.header-scroll-button')) {
+        closeMobileMenu();
+      }
+    }
   });
+
+let lastScroll = 0;
+const header = document.querySelector('header');
+
+window.addEventListener('scroll', () => {
+  const currentScroll = window.pageYOffset;
+
+  if (currentScroll > lastScroll && currentScroll > 100) {
+    header.classList.add('hide');
+  } else {
+    header.classList.remove('hide');
+  }
+
+  lastScroll = currentScroll;
+});
 })();

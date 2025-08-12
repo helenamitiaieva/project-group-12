@@ -18,13 +18,13 @@ function renderStarsPrecise(rate, max = 5) {
 <svg class="star" width="20" height="20" viewBox="0 0 32 32" aria-hidden="true">
   <defs>
     <mask id="${maskId}">
-      <use href="./symbol-defs.svg#icon-star" fill="#fff"></use>
+      <use href="./symbol-defs.svg#icon-star-full" fill="#fff"></use>
     </mask>
   </defs>
 
-  <use href="./symbol-defs.svg#icon-star" fill="#dfdfdf"></use>
+  <use href="./symbol-defs.svg#icon-star-full" fill="#dfdfdf"></use>
 
-  <rect x="0" y="0" width="${percent}%" height="100%" fill="#000" mask="url(#${maskId})"></rect>
+  <rect x="0" y="0" width="${percent}%" height="100%" fill="#6B0609" mask="url(#${maskId})"></rect>
 </svg>`;
   }
   return html;
