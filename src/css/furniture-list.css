@@ -148,16 +148,17 @@
 }
 
 .product-card {
+  display: flex;
+  flex-direction: column;
   max-width: 335px;
-  height: 450px;
-  min-width: 276px;
+  min-height: 450px;
 }
 
 .product-image {
   border-radius: 8px;
   width: 100%;
   height: 277px;
-  margin-bottom: 8px;
+  margin-bottom: 16px;
 }
 
 .product-title {
@@ -165,7 +166,7 @@
   font-size: 16px;
   line-height: 1.6;
   letter-spacing: 0.01em;
-  margin-bottom: 8px;
+  margin-bottom: auto;
 }
 
 .color-dots {
@@ -276,7 +277,11 @@
   .product-card {
     width: calc((100% - 24px) / 2);
     max-width: 340px;
-    height: 460px;
+    min-height: 460px;
+  }
+
+  .product-image {
+    height: 281px;
   }
 
   .product-title {
@@ -311,9 +316,17 @@
     width: calc((100% - 24px * 6) / 7);
   }
 
+  .list-furniture {
+    row-gap: 40px;
+  }
+
   .product-card {
     width: 310px;
-    height: 435px;
+    min-height: 435px;
+  }
+
+  .product-image {
+    height: 256px;
   }
 
   .loader {
