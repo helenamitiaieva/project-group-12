@@ -41,7 +41,7 @@ modal.addEventListener('click', (e) => {
   if (colorItem) {
 
     document.querySelectorAll('.furniture-modal-colors-item').forEach(item => {
-      item.style.border = 'none';
+      item.style.border = '';
       item.style.borderRadius = '';
     });
 
@@ -51,33 +51,13 @@ modal.addEventListener('click', (e) => {
   }
 });
 
-
-// Функция для открытия модалки заказа
-// function openOrderModal(furnitureId, furnitureName, furniturePrice) {
-//   const orderModalBackdrop = document.querySelector(
-//     '[data-order-modal-backdrop]'
-//   );
-//   if (orderModalBackdrop) {
-//     orderModalBackdrop.classList.remove('hiden');
-//     orderModalBackdrop.classList.add('is-open');
-
-//     // Сохраняем данные о товаре для отправки заказа
-//     window.selectedFurniture = {
-//       id: furnitureId,
-//       name: furnitureName,
-//       price: furniturePrice,
-//     };
-
-//     // Блокируем скролл
-//   }
-// }
 export function createRating(rate, max = 5) {
   const r = Number(rate) || 0;
   let html = '';
 
   for (let i = 0; i < max; i++) {
-    const portion = Math.max(0, Math.min(1, r - i)); // 0 до 1
-    const percent = Math.round(portion * 100);       // у %
+    const portion = Math.max(0, Math.min(1, r - i));
+    const percent = Math.round(portion * 100);      
     const maskId = `star-mask-${i}-${Math.random().toString(36).slice(2, 7)}`;
 
     html += `
@@ -89,10 +69,8 @@ export function createRating(rate, max = 5) {
       </mask>
     </defs>
 
-    <!-- Сіра зірка (фон) -->
     <use href="./public/symbol-defs.svg#icon-star-full" fill="#dfdfdf"></use>
 
-    <!-- Кольорова заливка -->
     <rect x="0" y="0" width="${percent}%" height="100%" fill="#6B0609" mask="url(#${maskId})"></rect>
   </svg>
 </li>`;

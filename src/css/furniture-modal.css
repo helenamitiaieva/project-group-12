@@ -157,7 +157,7 @@ button {
 
 .furniture-modal-colors-item:hover,
 .furniture-modal-colors-item:focus{
-    border: 4px solid #6B0609;
+    border: 3px solid #ccc;
 }
 
 .furniture-modal-order-button {
