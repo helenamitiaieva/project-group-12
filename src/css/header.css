@@ -54,7 +54,7 @@ header.hide {
     transform: scale(1.1);
 }
 
-@media (min-width: 1440px) {
+@media (max-width: 1439px) {
 
     .mobile-menu-open-btn,
     .mob-menu,
@@ -231,7 +231,7 @@ header.hide {
     }
 
     .mob-menu {
-        position: fixed;               /* top/right/bottom/left: 0 */
+        position: fixed;        
         background: #fff;
         transform: translateY(-100%);
         transition: transform 250ms ease;
@@ -241,7 +241,7 @@ header.hide {
         max-width: 249px;
         max-height: 321px;
         top: 70px;
-      right: 0;
+        right: 0;
         transform: translateY(0);
     }
 
