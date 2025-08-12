@@ -25,8 +25,7 @@ modal.addEventListener('click', event => {
     const orderButton = event.target.closest('.furniture-modal-order-button');
    
     const furnitureId = orderButton.dataset.furnitureId;
-    const furnitureName = orderButton.dataset.furnitureName;
-    const furniturePrice = orderButton.dataset.furniturePrice;
+
     closeModal();
     selectedFurniture = {
       modelId: furnitureId,
@@ -86,7 +85,7 @@ export function createFurnitureCard(furniture) {
       const markup = `
                 <button class="furniture-modal-button-close" type="button" data-modal-close>
                     <svg>
-                        <use href="./public/symbol-defs.svg#icon-x"></use>
+                        <use href="./logo-w.svg#icon-x"></use>
                     </svg>
                 </button>
                 <div id="images">
