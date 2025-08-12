@@ -5,9 +5,9 @@
 
 .footer-container {
     display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
 }
 
 .footer-logo {
@@ -35,6 +35,12 @@
     font-size: 16px;
     line-height: 1.6;
     color: #ffffff;
+    transition: color 500ms ease;
+}
+
+.footer-item-link:hover, 
+.footer-item-link:focus {
+    color: #ccc;
 }
 
 .footer-list-social {
@@ -59,10 +65,22 @@
 
 .social-svg {
     fill: #ffffff;
+    transition: fill 500ms ease;
 }
 
 .social-svg-instagram {
     fill: #080c09;
+    transition: fill 500ms ease;
+}
+
+.social-svg-instagram:hover,
+.social-svg-instagram:focus {
+    fill: #975052;
+}
+
+.social-svg:hover,
+.social-svg:focus {
+    fill: #ccc;
 }
 
 .footer-rights {
