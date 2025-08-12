@@ -79,49 +79,35 @@ modal.addEventListener('click', (e) => {
 //     // Блокируем скролл
 //   }
 // }
+export function createRating(rate, max = 5) {
+  const r = Number(rate) || 0;
+  let html = '';
 
-export function createRating(rating) {
-  let markup = '';
-  const fullStars = Math.floor(rating);
-  const hasPartialStar = rating % 1 !== 0;
+  for (let i = 0; i < max; i++) {
+    const portion = Math.max(0, Math.min(1, r - i)); // 0 до 1
+    const percent = Math.round(portion * 100);       // у %
+    const maskId = `star-mask-${i}-${Math.random().toString(36).slice(2, 7)}`;
 
-  // Повні зірки
-  for (let i = 0; i < fullStars; i++) {
-    markup += `<li>
-            <svg width="16" height="16">
-                <use href="./public/symbol-defs.svg#icon-star"></use>
-            </svg>
-        </li>`;
+    html += `
+<li>
+  <svg class="star" width="16" height="16" viewBox="0 0 32 32" aria-hidden="true">
+    <defs>
+      <mask id="${maskId}">
+        <use href="./public/symbol-defs.svg#icon-star-full" fill="#fff"></use>
+      </mask>
+    </defs>
+
+    <!-- Сіра зірка (фон) -->
+    <use href="./public/symbol-defs.svg#icon-star-full" fill="#dfdfdf"></use>
+
+    <!-- Кольорова заливка -->
+    <rect x="0" y="0" width="${percent}%" height="100%" fill="#6B0609" mask="url(#${maskId})"></rect>
+  </svg>
+</li>`;
   }
-
-  // Часткова зірка
-  if (hasPartialStar) {
-    const percentage = (rating % 1) * 100;
-    markup += `<li>
-            <svg width="16" height="16">
-                <defs>
-                    <linearGradient id="partial-${rating}">
-                        <stop offset="${percentage}%" stop-color="black"/>
-                        <stop offset="${percentage}%" stop-color="transparent"/>
-                    </linearGradient>
-                </defs>
-                <use href="./public/symbol-defs.svg#icon-star" fill="url(#partial-${rating})"></use>
-            </svg>
-        </li>`;
-  }
-
-  // Пусті зірки
-  const emptyStars = 5 - Math.ceil(rating);
-  for (let i = 0; i < emptyStars; i++) {
-    markup += `<li>
-            <svg width="16" height="16" fill="transparent" stroke="black">
-                <use href="./public/symbol-defs.svg#icon-star"></use>
-            </svg>
-        </li>`;
-  }
-
-  return markup;
+  return html;
 }
+
 
 export function createFurnitureCard(furniture) {
   try {
