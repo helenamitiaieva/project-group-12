@@ -49,5 +49,21 @@
     ) {
       closeMobileMenu();
     }
+
+    if (
+      mobileMenu.classList.contains('is-open') &&
+      e.target.closest('.nav-list-item-link')
+    ) {
+      closeMobileMenu();
+    }
+    
+    document.addEventListener('click', (e) => {
+      if (
+        mobileMenu.classList.contains('is-open') &&
+        e.target.closest('.header-scroll-button')
+      ) {
+        closeMobileMenu();
+      }
+    });
   });
 })();
