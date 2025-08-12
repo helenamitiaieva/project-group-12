@@ -184,9 +184,9 @@ export function createFurnitureCard(furniture) {
     console.error('Помилка при завантаженні товару:', error);
     modal.innerHTML = `
             <button class="furniture-modal-button-close" type="button" data-modal-close>
-                <svg>
-                    <use href="./public/symbol-defs.svg#icon-x"></use>
-                </svg>
+                <svg width="16" height="16"> 
+                        <use href="./public/icon.svg#icon-x"></use>
+                    </svg>
             </button>
             <div>
                 <h2 class="furniture-modal-title">Помилка</h2>
