@@ -3,7 +3,6 @@ import 'izitoast/dist/css/iziToast.min.css';
 import { getFurnitures, getCategories } from './api.js';
 import { createFurnitureCard } from './furniture-modal.js';
 
-
 const categoriesList = document.querySelector('.list-categories');
 const furnitureList = document.querySelector('.list-furniture');
 const loader = document.querySelector('.loader');
@@ -14,46 +13,45 @@ let page = 1;
 let totalPages = 0;
 let currentFurnitures = []; // Сохраняем текущие данные о мебели
 
-initFurniture(); 
+initFurniture();
 initCategories();
 
 async function initCategories() {
-    try {
-        const categories = await getCategories();
-        const allCategoryMarkup = `
+  try {
+    const categories = await getCategories();
+    const allCategoryMarkup = `
       <li class="item-category">
         <button type="button" data-bg-id="all" class="btn-category">Всі товари</button>
       </li>`;
-        categoriesList.insertAdjacentHTML('beforeend', allCategoryMarkup);
-        categories.forEach(({_id, name}) => {
-            const markup =
-            `<li class="item-category">
+    categoriesList.insertAdjacentHTML('beforeend', allCategoryMarkup);
+    categories.forEach(({ _id, name }) => {
+      const markup = `<li class="item-category">
         <button type="button" data-id="${_id}" data-bg-id="${_id}" class="btn-category">${name}</button>
         </li>`;
-        categoriesList.insertAdjacentHTML('beforeend', markup);
-        });
-        const firstBtn = categoriesList.querySelector('button[data-bg-id="all"]');
-        firstBtn.classList.add('active');
-        } catch (error) {
-        iziToast.error({
-            message: 'Помилка при завантаженні категорії',
-            position: 'topRight',
-        })
-    }
+      categoriesList.insertAdjacentHTML('beforeend', markup);
+    });
+    const firstBtn = categoriesList.querySelector('button[data-bg-id="all"]');
+    firstBtn.classList.add('active');
+  } catch (error) {
+    iziToast.error({
+      message: 'Помилка при завантаженні категорії',
+      position: 'topRight',
+    });
+  }
 }
 categoriesList.addEventListener('click', onCategoryClick);
 
 async function onCategoryClick(event) {
-    const btn = event.target.closest('.btn-category');
-    if (!btn) return;
+  const btn = event.target.closest('.btn-category');
+  if (!btn) return;
 
-    const allButtons = categoriesList.querySelectorAll('.btn-category');
-    allButtons.forEach(button => button.classList.remove('active'));
+  const allButtons = categoriesList.querySelectorAll('.btn-category');
+  allButtons.forEach(button => button.classList.remove('active'));
 
-    btn.classList.add('active');
-    categoryId = btn.dataset.id || null;
-    page = 1;
-    await initFurniture(categoryId);
+  btn.classList.add('active');
+  categoryId = btn.dataset.id || null;
+  page = 1;
+  await initFurniture(categoryId);
 }
 
 async function initFurniture(categoryId, pageNum = 1, isLoadMore = false) {
@@ -101,7 +99,6 @@ async function initFurniture(categoryId, pageNum = 1, isLoadMore = false) {
     } else {
       downloadButton.classList.add('hidden');
     }
-
   } catch (error) {
     iziToast.error({
       message: 'Помилка при завантаженні меблів',
@@ -128,6 +125,7 @@ furnitureList.addEventListener('click', event => {
   //Відкриваємо модальне вікно
   const modalBackdrop = document.querySelector('.furniture-modal-backdrop');
   modalBackdrop.classList.add('is-open');
+  document.body.classList.add('no-scroll');
 
   //Створюємо картку
   createFurnitureCard(currentFurnitures[furnitureIndex]);
