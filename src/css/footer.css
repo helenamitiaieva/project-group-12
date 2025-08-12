@@ -93,8 +93,6 @@
     color: #ffffff;
 }
 
-/* ---------------------------------------------------- */
-
 @media screen and (min-width: 768px){
 .footer-list-link {
     flex-direction: row;
@@ -109,10 +107,7 @@
 }
 }
 
-/* ----------------------------------------------------- */
-
 @media screen and (min-width: 1440px){
-
 .footer {
     padding-bottom: 0;
 }

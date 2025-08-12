@@ -75,7 +75,6 @@ button {
   opacity: 0.5;
 }
 
-/* Main image */
 .furniture-modal-main-image {
   display: block;
   width: 100%;
@@ -84,7 +83,6 @@ button {
   border-radius: 8px;
 }
 
-/* Sub-images */
 .furniture-modal-sub-images-list {
     display: flex;
     gap: 16px;
@@ -103,21 +101,17 @@ button {
   border-radius: 8px;
 }
 
-/* h2 */
 .furniture-modal-title {
     font-size: 32px;
     line-height: 1.3;  
 }
 
-
-/* price */
 .furniture-modal-price {
     font-size: 24px;
     line-height: 1.4;
     margin-bottom: 24px;
 }
 
-/* p */
 .furniture-modal-text {
     font-weight: 400;
     font-size: 16px;
@@ -136,7 +130,6 @@ button {
   margin-bottom: 32px;
 }
 
-/* rating */
 .furniture-modal-rating-list {
   display: flex;
   justify-content: flex-start;
@@ -145,7 +138,6 @@ button {
   margin-bottom: 24px;
 }
 
-/* colors */
 .furniture-modal-colors-list {
     display: flex;
     justify-content: flex-start;
@@ -168,7 +160,6 @@ button {
     border: 4px solid #6B0609;
 }
 
-/* order button */
 .furniture-modal-order-button {
     display: block;
     width: 100%;
@@ -220,8 +211,6 @@ button {
                     font-size: 32px;
                 }
         
-        
-                /* p */
                 .furniture-modal-text {
                     font-weight: 400;
                     font-size: 16px;
@@ -232,18 +221,15 @@ button {
             margin-bottom: 24px;
         }
 
-    /* Sub-images */
     .furniture-modal-sub-images-image {
         height: auto;
     }
 
-    /* p */
     .furniture-modal-text#description {
         width: 421px;
         height: 100%;
     }
 
-    /* order button */
     .furniture-modal-order-button {
         width: 310px;
         height: 46px;
@@ -284,13 +270,11 @@ button {
         min-width: 0;
     }
 
-    /* p */
     .furniture-modal-text#description {
         margin-bottom: 32px;
         width: 100%;
     }
 
-    /* order button */
     .furniture-modal-order-button {
         width: 80%;
     }

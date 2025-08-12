@@ -19,8 +19,8 @@
     align-items: center;
     justify-content: center;
     max-width: 375px;
-        width: 100%;
-        height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .title-hero {
@@ -62,8 +62,6 @@
     opacity: 0.5;
 }
 
-/* ------------------------------------------- */
-
 @media screen and (min-width: 768px) {
     .hero {
             padding: 36px 0;
@@ -101,8 +99,6 @@
     
 }
 
-/* ---------------------------------------------- */
-
 @media screen and (min-width: 1440px) {
     .hero {
             padding: 92px 0;
@@ -122,75 +118,11 @@
     
 }
 
-/* @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-    .hero {
-        background-image: url('../img/hero/bg@2x-2-min.jpg');
-    }
-}
-
-@media screen and (min-width:768px) {
-    .hero {
-        background-image: url(../img/hero/bg-1-min.jpg);
-    }
-
-@media only screen and (-webkit-min-device-pixel-ratio: 2) {
-    .hero {
-        background-image: url('../img/hero/bg@2x-1-min.jpg');
-    }
-}}
-
-@media screen and (min-width:1440px) {
-    .hero {
-        background-image: url(../img/hero/bg-min.jpg);
-    }
-    @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-        .hero {
-            background-image: url('../img/hero/bg@2x-min.jpg');
-        }
-    }
-}
-
-
-@media screen and (min-width:768px) {
-    .div-hero-text {
-        max-width: 560px;
-        max-height: 245px;
-        margin-right: 144px;
-    }
-}
-
-@media screen and (min-width:1440px) {
-    .div-hero-text {
-        margin-right: 752px;
-    }
-}
-
-
-@media screen and (min-width:768px) {
-    .title-hero {
-        font-weight: 700;
-        font-size: 56px;
-        max-height: 134px;
-    }
-} */
-
-
-
-/* @media screen and (min-width:768px) {
-    .hero-text {
-    font-size: 18px;
-    max-width: 560px;
-    min-height: 87px;
-    height: 100%;
-    }
-} */
-
 .hero-scroll {
     box-shadow: 0 1px 2px 0 rgba(8, 12, 9, 0.05), inset 0 -2px 1px 0 rgba(0, 0, 0, 0.2), inset 0 0 0 1px rgba(8, 12, 9, 0.15), inset 0 2px 1px 0 rgba(255, 255, 255, 0.25), inset 0 32px 24px 0 rgba(255, 255, 255, 0.05);
     background: #6b0609;
     border-radius: 100px;
     letter-spacing: 0.01em;
-    /* width: 335px; */
     min-height: 46px;
     display: flex;
     align-items: center;
@@ -203,41 +135,4 @@
     color: #fff;
     font-family: "Raleway", sans-serif;
     transition:  opacity 2s var(--main-cubic-bezier);
-}
-
-
-
-/* @media screen and (min-width:768px) {
-    .hero-scroll {
-        max-width: 209px;
-        min-height: 46px;
-}
-} */
-/* @media screen and (min-width: 768px) {
-    .hero-container {
-        max-width: 768px;
-        margin: 0 auto;
-        max-height: 323px;
-    }
-}
-
-@media screen and (min-width: 1440px) {
-    .hero-container {
-        max-width: 1440px;
-        margin: 0 auto;
-    }
-}
-
-@media screen and (min-width:768px) {
-    .hero {
-        padding-bottom: 37px;
-        padding-top: 36px;
-    }
-}
-
-@media screen and (min-width:1440px) {
-    .hero {
-        padding-bottom: 92px;
-        padding-top: 92px;
-    }
-} */
+} 
