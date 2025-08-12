@@ -115,8 +115,8 @@ export function createFurnitureCard(furniture) {
     if (furniture) {
       const markup = `
                 <button class="furniture-modal-button-close" type="button" data-modal-close>
-                    <svg>
-                        <use href="./public/symbol-defs.svg#icon-x"></use>
+                    <svg width="16" height="16"> 
+                        <use href="./public/icon.svg#icon-x"></use>
                     </svg>
                 </button>
                 <div id="images">
