@@ -2,6 +2,7 @@ import validator from 'validator';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 import { createOrder } from './api';
+import { selectedFurniture } from './furniture-modal';
 
 const backdrop = document.querySelector('[data-order-modal-backdrop]');
 const openModalBtn = document.querySelector('[data-order-modal-open]');
@@ -42,7 +43,6 @@ export function openModal() {
   document.body.classList.add('no-scroll');
 
   if (openModalBtn) {
-    openModalBtn.setAttribute('aria-expanded', 'false');
     setTimeout(() => {
       openModalBtn.blur();
     }, 0);
@@ -55,6 +55,7 @@ export function openModal() {
 export function closeModal(event) {
   if (
     event &&
+    event.type === 'mousedown' &&
     event.target !== closeModalBtn &&
     !closeModalBtn.contains(event.target) &&
     event.target !== backdrop
@@ -63,10 +64,6 @@ export function closeModal(event) {
   }
   backdrop.classList.remove('is-open');
   document.body.classList.remove('no-scroll');
-  openModalBtn.setAttribute('aria-expanded', 'true');
-  setTimeout(() => {
-    openModalBtn.focus();
-  }, 0);
 }
 
 function handleEscape(event) {
@@ -118,9 +115,9 @@ function handleSubmit(event) {
   createOrder({
     email,
     phone: tel,
-    modelId: '682f9bbf8acbdf505592ac36',
     color: '#1212ca',
     comment: comment || 'No comment',
+    ...selectedFurniture,
   })
     .then(response => {
       iziToast.success({
