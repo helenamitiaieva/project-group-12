@@ -237,6 +237,7 @@ header.hide {
         top: 70px;
         right: 0;
         transform: translateY(0);
+        display: block;
     }
 
     .mob-menu-container {
